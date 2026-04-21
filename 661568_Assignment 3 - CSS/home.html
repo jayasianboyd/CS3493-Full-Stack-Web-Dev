@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>เว็บไซต์แนะนำตนเอง</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eaf4fb;
+            font-family: 'TH Sarabun New', Sarabun, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* HEADER */
+        #header-section {
+            background-color: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 16px 20px;
+        }
+
+        #header-section h1 {
+            margin: 0;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 34px;
+            text-shadow: 2px 2px 0px #1E90FF;
+        }
+
+        /* MENU */
+        #menu-section {
+            background-color: #2e86ab;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #menu-section>span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #cceeff;
+            margin-right: 8px;
+        }
+
+        .menu-link {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 5px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .menu-link:hover {
+            background-color: #1E90FF;
+        }
+
+        /* IMAGES SECTION */
+        #images-section {
+            max-width: 860px;
+            margin: 20px auto 10px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        #images-section img {
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .tag-label {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* CONTENT SECTION */
+        #content-section {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 20px 20px 40px;
+        }
+
+        /* TABLE */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        th {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 12px 18px;
+            text-align: left;
+            font-size: 18px;
+            border-bottom: 2px solid #2e86ab;
+        }
+
+        td {
+            padding: 12px 18px;
+            border-bottom: 1px solid #e8e8e8;
+            vertical-align: middle;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:nth-child(even) td {
+            background-color: #f0f8ff;
+        }
+
+        tbody tr:hover td {
+            background-color: #dceefb;
+            transition: background-color 0.15s;
+        }
+
+        .col-topic {
+            width: 38%;
+            font-weight: bold;
+            color: #1a1a2e;
+        }
+
+        /* FOOTER */
+        #footer-section {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        address {
+            font-size: 17px;
+            font-style: normal;
+            color: #c9b8ff;
+            margin: 0;
+        }
+
+        .footer-tag {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .filename-label {
+            font-size: 16px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header-section">
+        <h1>&lt;div&gt; เว็บไซต์แนะนำตนเอง</h1>
+    </div>
+
+    <!-- MENU -->
+    <div id="menu-section">
+        <span>&lt;div&gt;</span>
+        <a href="home.html" class="menu-link">HOME</a>
+        <a href="study.html" class="menu-link">STUDY</a>
+        <a href="viewBuild/album/index1.html" class="menu-link">GALLERY</a>
+        <a href="webvideo.html" class="menu-link">VIDEO</a>
+        <a href="mywebsite.html" class="menu-link">CONTACT</a>
+    </div>
+
+    <!-- รูปภาพ -->
+    <div id="images-section">
+        <img src="picture/gif1.jpg" alt="gif1">
+        <img src="picture/gif2.jpg" alt="gif2">
+        <img src="picture/gif3.jpg" alt="gif3">
+    </div>
+
+    <!-- CONTENT (ตาราง) -->
+    <div id="content-section">
+        <table>
+            <thead>
+                <tr>
+                    <th>หัวข้อ</th>
+                    <th>รายละเอียด</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-topic">ชื่อ-นามสกุล</td>
+                    <td>Peeratut Waritum</td>
+                </tr>
+                <tr>
+                    <td class="col-topic">สถานที่ท่องเที่ยวที่ชอบ</td>
+                    <td>Bangsaen</td>
+                </tr>
+                <tr>
+                    <td class="col-topic">อาหารที่ชอบ</td>
+                    <td>ramen</td>
+                </tr>
+                <tr>
+                    <td class="col-topic">งานอดิเรก</td>
+                    <td>play Game</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer-section">
+        <div>
+            <div class="footer-tag">&lt;address&gt;</div>
+            <address>
+                written by <span style="text-decoration: underline;">Peeratut Waritum</span><br>
+                Visit us at : cs.hcu.ac.th
+            </address>
+        </div>
+        <div class="filename-label">661568.html</div>
+    </div>
+
+</body>
+
+</html>

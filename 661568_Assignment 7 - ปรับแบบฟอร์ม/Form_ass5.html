@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์มรับสมัครงานฉบับสมบูรณ์ - Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(135deg, #e8f0fe 0%, #f0f2f5 50%, #e3f2fd 100%);
+            min-height: 100vh;
+            padding-top: 30px;
+            padding-bottom: 40px;
+        }
+
+        /* ===== Card Header ===== */
+        .card-header-custom {
+            background: linear-gradient(135deg, #1565c0 0%, #0d6efd 100%);
+            padding: 1.5rem 2rem;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .card-header-custom h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* md ≥768px */
+        @media (min-width: 768px) {
+            .card-header-custom h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* lg ≥992px */
+        @media (min-width: 992px) {
+            .card-header-custom h3 {
+                font-size: 1.75rem;
+            }
+
+            .card-header-custom {
+                padding: 1.75rem 2.5rem;
+            }
+        }
+
+        /* ===== Card ===== */
+        .form-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(13, 110, 253, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* ===== Section Title ===== */
+        .form-section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-left: 5px solid #0d6efd;
+            padding: 6px 0 6px 14px;
+            margin-bottom: 1.2rem;
+            margin-top: 0.5rem;
+            color: #1a1a2e;
+            font-weight: 700;
+            font-size: 1rem;
+            background: linear-gradient(90deg, rgba(13, 110, 253, 0.06) 0%, transparent 80%);
+            border-radius: 0 6px 6px 0;
+        }
+
+        /* md ≥768px */
+        @media (min-width: 768px) {
+            .form-section-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* lg ≥992px */
+        @media (min-width: 992px) {
+            .form-section-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===== Step Badge ===== */
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: #0d6efd;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ===== Input Enhancements ===== */
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 0.18rem rgba(13, 110, 253, 0.2);
+        }
+
+        .input-group-text {
+            background-color: #e8f0fe;
+            border-color: #dee2e6;
+            color: #0d6efd;
+            font-weight: 600;
+        }
+
+        /* ===== Consent Card ===== */
+        .consent-card {
+            background: linear-gradient(90deg, #fff5f5 0%, #fff 100%);
+            border: 1.5px solid #f8d7da !important;
+            border-radius: 8px;
+        }
+
+        /* ===== Buttons ===== */
+        .btn-submit {
+            background: linear-gradient(135deg, #1565c0 0%, #0d6efd 100%);
+            border: none;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+        }
+
+        .btn-reset {
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        /* ===== Responsive: stack buttons on xs ===== */
+        @media (max-width: 767.98px) {
+
+            .btn-submit,
+            .btn-reset {
+                font-size: 0.95rem;
+                padding: 0.6rem 1rem;
+            }
+
+            body {
+                padding-top: 0;
+                padding-bottom: 20px;
+            }
+
+            .form-card {
+                border-radius: 0;
+            }
+
+            .card-header-custom {
+                border-radius: 0;
+            }
+        }
+
+        /* ===== Progress bar ===== */
+        .form-progress-wrap {
+            background: #e9ecef;
+            border-radius: 4px;
+            height: 6px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #1565c0, #0d6efd);
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        /* ===== File Input ===== */
+        .form-control[type="file"] {
+            padding: 0.45rem 0.75rem;
+        }
+
+        /* ===== Gender inline flex wrap ===== */
+        .gender-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-xl px-2 px-md-4">
+        <div class="row justify-content-center">
+            <!-- col-12 on xs, col-10 on md, col-9 on lg -->
+            <!--
+              Outer column:
+                xs  (< 768px) : col-12     → 100% ความกว้าง
+                md  (≥ 768px) : col-md-10  → 83%
+                lg  (≥ 992px) : col-lg-9   → 75%
+            -->
+            <div class="col-12 col-md-10 col-lg-9">
+
+                <div class="card form-card">
+
+                    <!-- ===== Card Header ===== -->
+                    <div class="card-header-custom text-white">
+                        <div class="d-flex align-items-center gap-3">
+                            <i class="bi bi-person-lines-fill fs-3"></i>
+                            <div>
+                                <h3 class="mb-0">แบบฟอร์มสมัครงาน</h3>
+                                <p class="mb-0 opacity-75 small d-none d-md-block">กรุณากรอกข้อมูลให้ครบถ้วนและถูกต้อง
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== Card Body ===== -->
+                    <div class="card-body p-3 p-md-4 p-lg-5">
+
+                        <!-- Progress -->
+                        <div class="form-progress-wrap">
+                            <div class="form-progress-bar" id="formProgress"></div>
+                        </div>
+
+                        <form action="#" method="POST" id="mainForm" novalidate>
+
+                            <!-- ========================= -->
+                            <!-- SECTION 1: ข้อมูลส่วนตัว -->
+                            <!-- ========================= -->
+                            <div class="form-section-title">
+                                <span class="step-badge">1</span> ข้อมูลส่วนตัว
+                            </div>
+
+                            <!--
+                              Section 1 Grid:
+                                xs (<768)  → col-12        (1 คอลัมน์, เรียงลง)
+                                md (≥768)  → col-md-6      (2 คอลัมน์)
+                                lg (≥992)  → col-lg-4 / 3 (3–4 คอลัมน์)
+                            -->
+                            <div class="row g-3 mb-4">
+
+                                <!-- ชื่อ: xs=12, md=6, lg=4 -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="fName" placeholder="ชื่อ" required>
+                                        <label for="fName"><i class="bi bi-person me-1 text-primary"></i>ชื่อ (First
+                                            Name)</label>
+                                    </div>
+                                </div>
+
+                                <!-- นามสกุล: xs=12, md=6, lg=4 -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="lName" placeholder="นามสกุล"
+                                            required>
+                                        <label for="lName"><i class="bi bi-person me-1 text-primary"></i>นามสกุล (Last
+                                            Name)</label>
+                                    </div>
+                                </div>
+
+                                <!-- วันเกิด: xs=12, md=6, lg=4 -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="bDate" required>
+                                        <label for="bDate"><i
+                                                class="bi bi-calendar3 me-1 text-primary"></i>วัน/เดือน/ปีเกิด</label>
+                                    </div>
+                                </div>
+
+                                <!-- เพศ: xs=12, md=6, lg=8 -->
+                                <div class="col-12 col-md-6 col-lg-8">
+                                    <label class="form-label text-muted small mb-1">
+                                        <i class="bi bi-gender-ambiguous me-1 text-primary"></i>เพศ (Gender)
+                                    </label>
+                                    <div class="gender-group ps-1 pt-1">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender" id="genderM"
+                                                value="male">
+                                            <label class="form-check-label" for="genderM">ชาย</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender" id="genderF"
+                                                value="female">
+                                            <label class="form-check-label" for="genderF">หญิง</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender" id="genderO"
+                                                value="other">
+                                            <label class="form-check-label" for="genderO">อื่นๆ</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- สัญชาติ: xs=12, md=12, lg=4 -->
+                                <div class="col-12 col-md-12 col-lg-4">
+                                    <label for="nationality" class="form-label text-muted small mb-1">
+                                        <i class="bi bi-flag me-1 text-primary"></i>สัญชาติ
+                                    </label>
+                                    <select class="form-select" id="nationality">
+                                        <option selected>ไทย</option>
+                                        <option>อื่นๆ</option>
+                                    </select>
+                                </div>
+
+                            </div><!-- /row -->
+
+                            <!-- ========================= -->
+                            <!-- SECTION 2: ข้อมูลการติดต่อ -->
+                            <!-- ========================= -->
+                            <div class="form-section-title">
+                                <span class="step-badge">2</span> ข้อมูลการติดต่อ
+                            </div>
+
+                            <!--
+                              Section 2 Grid:
+                                xs (<768)  → col-12        (stack)
+                                md (≥768)  → col-md-7/5    (Email 7, Phone 5)
+                                lg (≥992)  → col-lg-5/4/3  (Email 5, Phone 4, Line 3)
+                            -->
+                            <div class="row g-3 mb-4">
+
+                                <!-- Email: xs=12, md=7, lg=5 -->
+                                <div class="col-12 col-md-7 col-lg-5">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                                        <div class="form-floating flex-grow-1">
+                                            <input type="email" class="form-control" id="email" placeholder="Email"
+                                                required>
+                                            <label for="email">อีเมลติดต่อ (Email)</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phone: xs=12, md=5, lg=4 -->
+                                <div class="col-12 col-md-5 col-lg-4">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                                        <div class="form-floating flex-grow-1">
+                                            <input type="tel" class="form-control" id="phone" placeholder="Phone"
+                                                oninput="this.value = this.value.replace(/[^0-9]/g, '')" maxlength="10"
+                                                required>
+                                            <label for="phone">เบอร์โทรศัพท์</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Line ID: xs=12, md=12, lg=3  (แสดงเฉพาะ lg+) -->
+                                <div class="col-12 col-md-12 col-lg-3">
+                                    <div class="input-group">
+                                        <span class="input-group-text text-success"><i
+                                                class="bi bi-chat-dots-fill"></i></span>
+                                        <div class="form-floating flex-grow-1">
+                                            <input type="text" class="form-control" id="lineId" placeholder="Line ID">
+                                            <label for="lineId">Line ID</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Portfolio / LinkedIn: xs=12, md=12, lg=12 -->
+                                <div class="col-12">
+                                    <label class="form-label text-muted small mb-1">
+                                        <i class="bi bi-link-45deg me-1 text-primary"></i>ลิงก์แฟ้มผลงาน / LinkedIn
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light text-muted">https://</span>
+                                        <input type="text" class="form-control" placeholder="www.yourportfolio.com">
+                                    </div>
+                                </div>
+
+                            </div><!-- /row -->
+
+                            <!-- ======================================= -->
+                            <!-- SECTION 3: ข้อมูลวิชาชีพและความสามารถ -->
+                            <!-- ======================================= -->
+                            <div class="form-section-title">
+                                <span class="step-badge">3</span> ข้อมูลวิชาชีพและความสามารถ
+                            </div>
+
+                            <!--
+                              Section 3 Grid:
+                                xs (<768)  → col-12        (stack)
+                                md (≥768)  → col-md-6      (2 คอลัมน์)
+                                lg (≥992)  → col-lg-4      (3 คอลัมน์: การศึกษา, ประสบการณ์, เงินเดือน)
+                            -->
+                            <div class="row g-3 mb-4">
+
+                                <!-- ระดับการศึกษา: xs=12, md=6, lg=4 -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <label for="edu" class="form-label">
+                                        <i class="bi bi-mortarboard me-1 text-primary"></i>ระดับการศึกษาสูงสุด
+                                    </label>
+                                    <select class="form-select" id="edu">
+                                        <option selected disabled>เลือกวุฒิการศึกษา...</option>
+                                        <option value="1">มัธยมศึกษาตอนปลาย / ปวช.</option>
+                                        <option value="2">ปวส. / อนุปริญญา</option>
+                                        <option value="3">ปริญญาตรี</option>
+                                        <option value="4">ปริญญาโทขึ้นไป</option>
+                                    </select>
+                                </div>
+
+                                <!-- ประสบการณ์: xs=12, md=6, lg=4 -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <label for="exp" class="form-label">
+                                        <i class="bi bi-briefcase me-1 text-primary"></i>ประสบการณ์ทำงาน
+                                    </label>
+                                    <select class="form-select" id="exp">
+                                        <option selected disabled>เลือก...</option>
+                                        <option value="0">ไม่มีประสบการณ์</option>
+                                        <option value="1">1–2 ปี</option>
+                                        <option value="3">3–5 ปี</option>
+                                        <option value="5">5 ปีขึ้นไป</option>
+                                    </select>
+                                </div>
+
+                                <!-- เงินเดือน: xs=12, md=12, lg=4 -->
+                                <div class="col-12 col-md-12 col-lg-4">
+                                    <label class="form-label">
+                                        <i class="bi bi-cash-coin me-1 text-primary"></i>เงินเดือนที่คาดหวัง
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" placeholder="ระบุจำนวนเงิน" min="0">
+                                        <span class="input-group-text">บาท</span>
+                                    </div>
+                                </div>
+
+                                <!-- ทักษะคอมพิวเตอร์: xs=12 (nested row สำหรับ lg → 3 คอลัมน์) -->
+                                <div class="col-12">
+                                    <label class="form-label d-block">
+                                        <i class="bi bi-laptop me-1 text-primary"></i>ทักษะคอมพิวเตอร์ (เลือกได้มากกว่า
+                                        1)
+                                    </label>
+                                    <div class="row g-2">
+                                        <div class="col-12 col-md-4 col-lg-4">
+                                            <div class="form-check border rounded px-3 py-2">
+                                                <input class="form-check-input" type="checkbox" id="skill1">
+                                                <label class="form-check-label" for="skill1">
+                                                    <i class="bi bi-microsoft me-1 text-primary"></i>MS Office
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-4">
+                                            <div class="form-check border rounded px-3 py-2">
+                                                <input class="form-check-input" type="checkbox" id="skill2">
+                                                <label class="form-check-label" for="skill2">
+                                                    <i class="bi bi-palette me-1 text-danger"></i>Graphic Design
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-4">
+                                            <div class="form-check border rounded px-3 py-2">
+                                                <input class="form-check-input" type="checkbox" id="skill3">
+                                                <label class="form-check-label" for="skill3">
+                                                    <i class="bi bi-code-slash me-1 text-success"></i>Programming
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- สิ่งที่สนใจ: xs=12, md=12, lg=6 -->
+                                <div class="col-12 col-md-12 col-lg-6">
+                                    <label for="interests" class="form-label">
+                                        <i class="bi bi-stars me-1 text-primary"></i>สิ่งที่เราสนใจ (Multiple Selection)
+                                    </label>
+                                    <select class="form-select" id="interests" name="interests" multiple size="4">
+                                        <option value="dev">Software Development</option>
+                                        <option value="design">UI/UX Design</option>
+                                        <option value="marketing">Marketing</option>
+                                        <option value="sales">Sales</option>
+                                        <option value="data">Data Analysis</option>
+                                    </select>
+                                    <div class="form-text small text-muted mt-1">
+                                        <i class="bi bi-info-circle me-1"></i>กด Ctrl (Windows) หรือ Command (Mac)
+                                        ค้างไว้เพื่อเลือกหลายรายการ
+                                    </div>
+                                </div>
+
+                                <!-- Bio: xs=12, md=12, lg=6 -->
+                                <div class="col-12 col-md-12 col-lg-6">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Bio" id="bio"
+                                            style="height: 120px"></textarea>
+                                        <label for="bio">
+                                            <i class="bi bi-pencil-square me-1 text-primary"></i>แนะนำตัวสั้นๆ
+                                            หรือเป้าหมายในการทำงาน (Bio)
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div><!-- /row -->
+
+                            <!-- ========================= -->
+                            <!-- SECTION 4: เอกสารแนบ     -->
+                            <!-- ========================= -->
+                            <div class="form-section-title">
+                                <span class="step-badge">4</span> เอกสารแนบและยืนยัน
+                            </div>
+
+                            <!--
+                              Section 4 Grid:
+                                xs (<768)  → col-12     (stack)
+                                md (≥768)  → col-md-6   (2 คอลัมน์)
+                                lg (≥992)  → col-lg-4   (3 คอลัมน์: Resume, รูปถ่าย, Transcript)
+                            -->
+                            <div class="row g-3 mb-4">
+
+                                <!-- Resume: xs=12, md=6, lg=4 -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <label for="resume" class="form-label">
+                                        <i class="bi bi-file-earmark-pdf me-1 text-danger"></i>อัปโหลด Resume (PDF)
+                                    </label>
+                                    <input class="form-control" type="file" id="resume" accept=".pdf">
+                                </div>
+
+                                <!-- Photo: xs=12, md=6, lg=4 -->
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <label for="pic" class="form-label">
+                                        <i class="bi bi-image me-1 text-success"></i>อัปโหลดรูปถ่าย
+                                    </label>
+                                    <input class="form-control" type="file" id="pic" accept="image/*">
+                                </div>
+
+                                <!-- Transcript: xs=12, md=12, lg=4 -->
+                                <div class="col-12 col-md-12 col-lg-4">
+                                    <label for="transcript" class="form-label">
+                                        <i class="bi bi-file-earmark-text me-1 text-warning"></i>Transcript /
+                                        ใบแสดงผลการเรียน
+                                    </label>
+                                    <input class="form-control" type="file" id="transcript" accept=".pdf,.jpg,.png">
+                                </div>
+
+                            </div><!-- /row -->
+
+                            <!-- Consent Switch -->
+                            <div class="card consent-card border-0 mb-4">
+                                <div class="card-body py-3 px-3">
+                                    <div class="form-check form-switch d-flex align-items-start gap-2">
+                                        <input class="form-check-input mt-1 flex-shrink-0" type="checkbox" id="consent"
+                                            required style="width: 2.5em; height: 1.3em;">
+                                        <label class="form-check-label text-danger" for="consent">
+                                            <i class="bi bi-shield-check me-1"></i>
+                                            ข้าพเจ้ายืนยันว่าข้อมูลข้างต้นเป็นความจริงทุกประการ
+                                            <span class="fw-bold">*</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ========================= -->
+                            <!-- BUTTONS                  -->
+                            <!-- ========================= -->
+                            <!--
+                              Buttons Grid:
+                                xs (<768)  → col-12 / col-12      (stack)
+                                md (≥768)  → col-md-8 / col-md-4  (split 8/4)
+                                lg (≥992)  → col-lg-9 / col-lg-3  (split 9/3 ปุ่มส่งกว้างขึ้น)
+                            -->
+                            <div class="row g-2">
+                                <div class="col-12 col-md-8 col-lg-9">
+                                    <button type="submit" class="btn btn-primary btn-submit btn-lg w-100 shadow-sm">
+                                        <i class="bi bi-send-fill me-2"></i>ส่งข้อมูลการสมัคร
+                                    </button>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-3">
+                                    <button type="reset" class="btn btn-outline-secondary btn-reset btn-lg w-100">
+                                        <i class="bi bi-arrow-counterclockwise me-2"></i>ล้างข้อมูล
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div><!-- /card-body -->
+                </div><!-- /card -->
+
+                <!-- Footer note -->
+                <p class="text-center text-muted small mt-3">
+                    <i class="bi bi-lock-fill me-1"></i>ข้อมูลของท่านจะถูกเก็บเป็นความลับและปลอดภัย
+                </p>
+
+            </div><!-- /col -->
+        </div><!-- /row -->
+    </div><!-- /container -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ===== Progress Bar Logic =====
+        const form = document.getElementById('mainForm');
+        const progressBar = document.getElementById('formProgress');
+        const inputs = form.querySelectorAll('input:not([type="radio"]):not([type="checkbox"]):not([type="file"]), select, textarea');
+
+        function updateProgress() {
+            let filled = 0;
+            inputs.forEach(el => {
+                if (el.value && el.value.trim() !== '' && el.value !== el.getAttribute('placeholder')) {
+                    filled++;
+                }
+            });
+            const pct = Math.round((filled / inputs.length) * 100);
+            progressBar.style.width = pct + '%';
+        }
+
+        inputs.forEach(el => el.addEventListener('input', updateProgress));
+        inputs.forEach(el => el.addEventListener('change', updateProgress));
+    </script>
+
+</body>
+
+</html>

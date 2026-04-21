@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ที่พักและอาหาร - ท่องเที่ยวภาคเหนือ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-tree"></i> ท่องเที่ยวภาคเหนือ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house"></i> หน้าหลัก
+                        </a>
+                    </li>
+                    <!-- Dropdown: สถานที่ท่องเที่ยว -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-geo-alt"></i> สถานที่ท่องเที่ยว
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="attractions.html">
+                                    <i class="bi bi-list-ul me-2"></i>ทั้งหมด
+                                </a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="attractions.html#nature">
+                                    <i class="bi bi-tree me-2 text-success"></i>ธรรมชาติและภูเขา
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#temple">
+                                    <i class="bi bi-building me-2 text-warning"></i>วัดและวัฒนธรรม
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#activity">
+                                    <i class="bi bi-bicycle me-2 text-info"></i>กิจกรรมผจญภัย
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#market">
+                                    <i class="bi bi-shop me-2 text-danger"></i>ตลาดและของฝาก
+                                </a></li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown: จังหวัด -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-map"></i> จังหวัด
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="attractions.html#chiangmai">
+                                    <i class="bi bi-geo-fill me-2 text-success"></i>เชียงใหม่
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#chiangrai">
+                                    <i class="bi bi-geo-fill me-2 text-primary"></i>เชียงราย
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#lamphun">
+                                    <i class="bi bi-geo-fill me-2 text-warning"></i>ลำพูน
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#lampang">
+                                    <i class="bi bi-geo-fill me-2 text-danger"></i>ลำปาง
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#phrae">
+                                    <i class="bi bi-geo-fill me-2 text-info"></i>แพร่
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#nan">
+                                    <i class="bi bi-geo-fill me-2 text-secondary"></i>น่าน
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#phayao">
+                                    <i class="bi bi-geo-fill me-2 text-success"></i>พะเยา
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#maehongson">
+                                    <i class="bi bi-geo-fill me-2 text-primary"></i>แม่ฮ่องสอน
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#uttaradit">
+                                    <i class="bi bi-geo-fill me-2 text-warning"></i>อุตรดิตถ์
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="accommodation.html">
+                            <i class="bi bi-building"></i> ที่พักและอาหาร
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope"></i> ติดต่อเรา
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-success text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold"><i class="bi bi-building"></i> ที่พักและอาหาร</h1>
+            <p class="lead">ที่พักสะดวกสบายและอาหารเหนือรสชาติดั้งเดิม</p>
+        </div>
+    </section>
+
+    <!-- Accommodation Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold text-success mb-5"><i class="bi bi-house-heart"></i> ที่พักแนะนำ</h2>
+            <div class="row g-4">
+                <!-- Hotel 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/โรงแรมเชียงใหม่ แกรนด์.jpeg" class="card-img-top"
+                            style="height: 180px; object-fit: cover;" alt="โรงแรม">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">โรงแรมเชียงใหม่ แกรนด์</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงใหม่</p>
+                            <p class="card-text">โรงแรมหรูใจกลางเมือง ใกล้ไนท์บาซาร์และสถานที่ท่องเที่ยว</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">5 ดาว</span>
+                                <span class="fw-bold text-success">฿2,500/คืน</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/ปาย ริเวอร์ รีสอร์ท.jpg" class="card-img-top"
+                            style="height: 180px; object-fit: cover;" alt="รีสอร์ท">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">ปาย ริเวอร์ รีสอร์ท</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.แม่ฮ่องสอน</p>
+                            <p class="card-text">รีสอร์ทริมแม่น้ำปาย บรรยากาศธรรมชาติ เงียบสงบ</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-info">4 ดาว</span>
+                                <span class="fw-bold text-success">฿1,800/คืน</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hotel 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/โฮมสเตย์บ้านดอย.jpg" class="card-img-top"
+                            style="height: 180px; object-fit: cover;" alt="โฮมสเตย์">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">โฮมสเตย์บ้านดอย</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงราย</p>
+                            <p class="card-text">ที่พักสไตล์ล้านนา สัมผัสวิถีชีวิตชาวบ้าน</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning text-dark">โฮมสเตย์</span>
+                                <span class="fw-bold text-success">฿800/คืน</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold text-success mb-5"><i class="bi bi-cup-hot"></i> อาหารเหนือแนะนำ</h2>
+            <div class="row g-4">
+                <!-- Food 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                        <img src="images/ข้าวซอย.jpg" class="card-img-top" style="height: 150px; object-fit: cover;"
+                            alt="ข้าวซอย">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">ข้าวซอย</h6>
+                            <p class="card-text small text-muted">ก๋วยเตี๋ยวน้ำแกงกะทิ อาหารขึ้นชื่อของภาคเหนือ</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Food 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                        <img src="images/น้ำเงี้ยว.jpg" class="card-img-top" style="height: 150px; object-fit: cover;"
+                            alt="น้ำเงี้ยว">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">น้ำเงี้ยว</h6>
+                            <p class="card-text small text-muted">ขนมจีนน้ำแดง รสชาติเข้มข้น หอมเครื่องเทศ</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Food 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                        <img src="images/ไส้อั่ว.jpg" class="card-img-top" style="height: 150px; object-fit: cover;"
+                            alt="ไส้อั่ว">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">ไส้อั่ว</h6>
+                            <p class="card-text small text-muted">ไส้กรอกหมูสมุนไพร รสชาติเผ็ดหอม</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Food 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                        <img src="images/น้ำพริกหนุ่ม.jpg" class="card-img-top"
+                            style="height: 150px; object-fit: cover;" alt="น้ำพริกหนุ่ม">
+                        <div class="card-body">
+                            <h6 class="card-title fw-bold">น้ำพริกหนุ่ม</h6>
+                            <p class="card-text small text-muted">น้ำพริกพริกหนุ่ม ทานคู่กับแคบหมูและผัก</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurant Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold text-success mb-5"><i class="bi bi-shop"></i> ร้านอาหารแนะนำ</h2>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped">
+                    <thead class="table-success">
+                        <tr>
+                            <th>ชื่อร้าน</th>
+                            <th>ประเภทอาหาร</th>
+                            <th>ที่ตั้ง</th>
+                            <th>ราคา</th>
+                            <th>คะแนน</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ข้าวซอยแม่สาย</strong></td>
+                            <td>อาหารเหนือ</td>
+                            <td>จ.เชียงใหม่</td>
+                            <td>฿50-100</td>
+                            <td><i class="bi bi-star-fill text-warning"></i> 4.8</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ร้านลาบเมืองเหนือ</strong></td>
+                            <td>อาหารเหนือ</td>
+                            <td>จ.เชียงราย</td>
+                            <td>฿80-150</td>
+                            <td><i class="bi bi-star-fill text-warning"></i> 4.5</td>
+                        </tr>
+                        <tr>
+                            <td><strong>กาดหลวง คาเฟ่</strong></td>
+                            <td>คาเฟ่</td>
+                            <td>จ.ลำปาง</td>
+                            <td>฿100-200</td>
+                            <td><i class="bi bi-star-fill text-warning"></i> 4.6</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ครัวคุณย่า</strong></td>
+                            <td>อาหารพื้นเมือง</td>
+                            <td>จ.แม่ฮ่องสอน</td>
+                            <td>฿60-120</td>
+                            <td><i class="bi bi-star-fill text-warning"></i> 4.7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 ท่องเที่ยวภาคเหนือ. สงวนลิขสิทธิ์.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Flexbox Tutorial Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f0f2f5; }
+        .hero { background: linear-gradient(135deg, #0d6efd, #0dcaf0); color: white; padding: 40px 0; border-radius: 10px; margin-bottom: 30px; }
+        .list-group-item { font-size: 1.1rem; padding: 15px 20px; transition: all 0.3s ease; border-left: 4px solid transparent; }
+        .list-group-item:hover { background-color: #f8f9fa; border-left-color: #0d6efd; transform: translateX(5px); }
+        .card { border-radius: 12px; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body class="p-4">
+    <div class="container" style="max-width: 800px;">
+        
+        <div class="text-center hero shadow-sm">
+            <h1 class="fw-bold">Bootstrap 5 Flexbox</h1>
+            <p class="lead mb-0">ตัวอย่างการใช้งานแบบแยกตามหัวข้อ</p>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <h4 class="card-title fw-bold text-primary mb-4">หัวข้อทั้งหมด</h4>
+                
+                <div class="list-group list-group-flush gap-2">
+                    <a href="1_flex_container.html" class="list-group-item list-group-item-action rounded shadow-sm mb-2 border">1. การกำหนด Flex Container (d-flex / d-inline-flex)</a>
+                    <a href="2_flex_direction.html" class="list-group-item list-group-item-action rounded shadow-sm mb-2 border">2. ทิศทางการจัดเรียง Item (flex-direction)</a>
+                    <a href="3_flex_wrap.html" class="list-group-item list-group-item-action rounded shadow-sm mb-2 border">3. การห่อหุ้ม Item (flex-wrap)</a>
+                    <a href="4_justify_content.html" class="list-group-item list-group-item-action rounded shadow-sm mb-2 border">4. การจัดเรียงเนื้อหาตามแกนหลัก (justify-content)</a>
+                    <a href="5_align_items.html" class="list-group-item list-group-item-action rounded shadow-sm mb-2 border">5. การจัดแนวขอบตามแกนขวางโดยเทียบ Flex Line (align-items)</a>
+                    <a href="6_align_content.html" class="list-group-item list-group-item-action rounded shadow-sm mb-2 border">6. การจัดแนวขอบตามแกนขวางโดยเทียบกับ Container (align-content)</a>
+                    <a href="7_align_self.html" class="list-group-item list-group-item-action rounded shadow-sm mb-2 border">7. การจัดแนวขอบตามแกนขวางแบบแยก Item (align-self)</a>
+                    <a href="8_flex_grow.html" class="list-group-item list-group-item-action rounded shadow-sm mb-2 border">8. การกำหนดสัดส่วนการยืดออกของ Item (flex-grow)</a>
+
+                </div>
+                
+                <div class="mt-4 pt-3 border-top text-center text-muted">
+                    <a href="flexbox-tutorial.html" class="text-decoration-none">← ดูโค้ดรวมทั้งหมด (ไฟล์เดิม)</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

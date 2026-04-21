@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CS3493 Full Stack Web Development — ผลงานทั้งหมดของนักศึกษา 661568" />
+  <title>CS3493 | Portfolio — 661568</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ══════════════════════════════════════
+       DESIGN TOKENS
+    ══════════════════════════════════════ */
+    :root {
+      --bg: #060b14;
+      --bg-card: #0d1626;
+      --bg-card-2: #111e33;
+      --bg-glass: rgba(13, 22, 38, 0.7);
+      --border: rgba(99, 179, 237, 0.12);
+      --border-hover: rgba(99, 179, 237, 0.4);
+      --accent: #63b3ed;
+      --accent-2: #a78bfa;
+      --accent-3: #34d399;
+      --accent-4: #fb923c;
+      --accent-5: #fbbf24;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-dim: #4b5e7a;
+      --radius: 18px;
+      --radius-sm: 12px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ══════════════════════════════════════
+       RESET & BASE
+    ══════════════════════════════════════ */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ══════════════════════════════════════
+       SCROLLBAR
+    ══════════════════════════════════════ */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      border-radius: 99px;
+    }
+
+    /* ══════════════════════════════════════
+       BACKGROUND MESH
+    ══════════════════════════════════════ */
+    .bg-mesh {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .bg-mesh::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 10%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139, 92, 246, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 60% 30%, rgba(16, 185, 129, 0.05) 0%, transparent 60%);
+    }
+
+    /* Particle Canvas */
+    #particle-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99, 179, 237, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 179, 237, 0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* ══════════════════════════════════════
+       NAV
+    ══════════════════════════════════════ */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(6, 11, 20, 0.8);
+      backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #1e40af, #7c3aed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    .nav-logo-text {
+      font-weight: 700;
+    }
+
+    .nav-logo-text span {
+      color: var(--accent);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-badge {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      background: rgba(99, 179, 237, 0.08);
+      border: 1px solid rgba(99, 179, 237, 0.25);
+      border-radius: 8px;
+      padding: 4px 10px;
+    }
+
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-3);
+      border-radius: 50%;
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.2;
+      }
+    }
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    .hero {
+      position: relative;
+      z-index: 1;
+      padding: 120px 32px 100px;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      justify-content: center;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .hero-gif-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .hero-gif-wrap img {
+      width: 340px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: 0 0 60px rgba(99, 179, 237, 0.15), 0 20px 60px rgba(0, 0, 0, 0.5);
+      animation: fadeDown 0.8s 0.4s ease both;
+      display: block;
+    }
+
+    .hero-gif-overlay {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(99, 179, 237, 0.05), rgba(167, 139, 250, 0.05));
+      border: 1px solid var(--border-hover);
+      pointer-events: none;
+    }
+
+    /* Glowing corner dots on GIF */
+    .hero-gif-wrap::before,
+    .hero-gif-wrap::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 14px var(--accent);
+      animation: blink 2s ease-in-out infinite;
+    }
+
+    .hero-gif-wrap::before {
+      top: -5px;
+      left: -5px;
+    }
+
+    .hero-gif-wrap::after {
+      bottom: -5px;
+      right: -5px;
+      background: var(--accent-2);
+      box-shadow: 0 0 14px var(--accent-2);
+      animation-delay: 1s;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      color: var(--accent-3);
+      background: rgba(52, 211, 153, 0.08);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+      border-radius: 99px;
+      padding: 6px 18px;
+      margin-bottom: 28px;
+      animation: fadeDown 0.7s ease both;
+    }
+
+    .hero-name {
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      animation: fadeDown 0.7s 0.1s ease both;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, #ffffff 0%, #a5c8f8 40%, #c4b5fd 70%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeDown 0.7s 0.15s ease both;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 0 48px;
+      min-height: 2.5em;
+      animation: fadeDown 0.7s 0.2s ease both;
+    }
+
+    /* Typing cursor */
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: var(--accent);
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: cursorBlink 0.8s step-end infinite;
+    }
+
+    @keyframes cursorBlink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      animation: fadeDown 0.7s 0.3s ease both;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-sub {
+        margin: 0 auto 48px;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-gif-wrap img {
+        width: 280px;
+        height: 200px;
+      }
+    }
+
+    .hero-stat {
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px 32px;
+      text-align: center;
+      min-width: 110px;
+      transition: var(--transition);
+    }
+
+    .hero-stat:hover {
+      border-color: var(--border-hover);
+      background: rgba(99, 179, 237, 0.05);
+    }
+
+    .stat-num {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+
+    .stat-lbl {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ══════════════════════════════════════
+       FILTER BAR
+    ══════════════════════════════════════ */
+    .filter-wrap {
+      position: sticky;
+      top: 68px;
+      z-index: 100;
+      background: rgba(6, 11, 20, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+    }
+
+    .filter-bar {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 7px 18px;
+      border-radius: 99px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #060b14;
+      font-weight: 700;
+    }
+
+    /* ══════════════════════════════════════
+       LAYOUT
+    ══════════════════════════════════════ */
+    .main-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 60px 32px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ══════════════════════════════════════
+       SECTION HEADER
+    ══════════════════════════════════════ */
+    .section {
+      margin-bottom: 70px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      border: 1px solid;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .section-pill svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .pill-orange {
+      color: #fb923c;
+      border-color: rgba(251, 146, 60, 0.3);
+      background: rgba(251, 146, 60, 0.08);
+    }
+
+    .pill-blue {
+      color: #60a5fa;
+      border-color: rgba(96, 165, 250, 0.3);
+      background: rgba(96, 165, 250, 0.08);
+    }
+
+    .pill-purple {
+      color: #a78bfa;
+      border-color: rgba(167, 139, 250, 0.3);
+      background: rgba(167, 139, 250, 0.08);
+    }
+
+    .pill-green {
+      color: #34d399;
+      border-color: rgba(52, 211, 153, 0.3);
+      background: rgba(52, 211, 153, 0.08);
+    }
+
+    .pill-yellow {
+      color: #fbbf24;
+      border-color: rgba(251, 191, 36, 0.3);
+      background: rgba(251, 191, 36, 0.08);
+    }
+
+    .section-meta {
+      flex: 1;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .section-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .section-count {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px 10px;
+      white-space: nowrap;
+    }
+
+    /* ══════════════════════════════════════
+       GRID
+    ══════════════════════════════════════ */
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    }
+
+    /* ══════════════════════════════════════
+       CARD
+    ══════════════════════════════════════ */
+    .card {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--card-glow, rgba(99, 179, 237, 0.04)), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--card-line, linear-gradient(90deg, var(--accent), var(--accent-2)));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-hover);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .card:hover .card-arrow {
+      opacity: 1;
+      transform: translate(3px, -3px);
+    }
+
+    /* Card color accents */
+    .card-orange {
+      --card-line: linear-gradient(90deg, #fb923c, #f97316);
+      --card-glow: rgba(251, 146, 60, 0.06);
+    }
+
+    .card-blue {
+      --card-line: linear-gradient(90deg, #60a5fa, #3b82f6);
+      --card-glow: rgba(96, 165, 250, 0.06);
+    }
+
+    .card-purple {
+      --card-line: linear-gradient(90deg, #a78bfa, #8b5cf6);
+      --card-glow: rgba(167, 139, 250, 0.06);
+    }
+
+    .card-green {
+      --card-line: linear-gradient(90deg, #34d399, #10b981);
+      --card-glow: rgba(52, 211, 153, 0.06);
+    }
+
+    .card-yellow {
+      --card-line: linear-gradient(90deg, #fbbf24, #f59e0b);
+      --card-glow: rgba(251, 191, 36, 0.06);
+    }
+
+    .card-arrow {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    /* Card header */
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-sm);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+    }
+
+    .card-icon svg {
+      opacity: 0.85;
+    }
+
+    .card-meta .card-num {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.68rem;
+      color: var(--text-dim);
+      margin-bottom: 5px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 650;
+      line-height: 1.35;
+      color: var(--text);
+    }
+
+    .card-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 18px;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 99px;
+      border: 1px solid;
+      letter-spacing: 0.02em;
+    }
+
+    .tag-html {
+      color: #fb923c;
+      border-color: rgba(251, 146, 60, 0.35);
+      background: rgba(251, 146, 60, 0.08);
+    }
+
+    .tag-css {
+      color: #60a5fa;
+      border-color: rgba(96, 165, 250, 0.35);
+      background: rgba(96, 165, 250, 0.08);
+    }
+
+    .tag-bs5 {
+      color: #a78bfa;
+      border-color: rgba(167, 139, 250, 0.35);
+      background: rgba(167, 139, 250, 0.08);
+    }
+
+    .tag-js {
+      color: #fbbf24;
+      border-color: rgba(251, 191, 36, 0.35);
+      background: rgba(251, 191, 36, 0.08);
+    }
+
+    .tag-flex {
+      color: #34d399;
+      border-color: rgba(52, 211, 153, 0.35);
+      background: rgba(52, 211, 153, 0.08);
+    }
+
+    .tag-grid {
+      color: #f472b6;
+      border-color: rgba(244, 114, 182, 0.35);
+      background: rgba(244, 114, 182, 0.08);
+    }
+
+    .tag-form {
+      color: #38bdf8;
+      border-color: rgba(56, 189, 248, 0.35);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    /* ══════════════════════════════════════
+       HIDDEN
+    ══════════════════════════════════════ */
+    .hidden {
+      display: none !important;
+    }
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .footer-logo-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1e40af, #7c3aed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-logo-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+
+    .footer-info {
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    .footer-info span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .footer-built {
+      margin-top: 10px;
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .footer-built .tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 768px) {
+      .nav-inner {
+        padding: 0 20px;
+      }
+
+      .hero {
+        padding: 80px 20px 70px;
+      }
+
+      .filter-wrap {
+        padding: 12px 20px;
+      }
+
+      .main-content {
+        padding: 40px 20px 60px;
+      }
+
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg-mesh" aria-hidden="true">
+    <canvas id="particle-canvas"></canvas>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- ─── Navigation ─── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </div>
+        <span class="nav-logo-text">CS3493 <span>|</span> Full Stack Web Dev</span>
+      </a>
+      <div class="nav-right">
+        <span class="nav-badge">661568</span>
+        <span class="nav-dot"></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ─── -->
+  <header class="hero">
+    <div class="hero-inner">
+
+      <!-- Left: Text content -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <svg viewBox="0 0 12 12" fill="currentColor" width="10" height="10">
+            <circle cx="6" cy="6" r="6" />
+          </svg>
+          Huachiew Chalermprakiet University · 2026
+        </div>
+        <p class="hero-name">Student ID · 661568</p>
+        <h1>ผลงาน<br />วิชา CS3493</h1>
+        <p class="hero-sub" id="hero-sub-text"><span id="typed-text"></span><span class="cursor"></span></p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-num" id="counter-assignments">0</span>
+            <span class="stat-lbl">Assignments</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num" id="counter-tech">0</span>
+            <span class="stat-lbl">Technologies</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-num" id="counter-semester">0</span>
+            <span class="stat-lbl">Semester</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Coding GIF -->
+      <div class="hero-gif-wrap">
+        <img
+          src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTk5bTBkZG9iMGVvNTQwejZjdXFwdWE2dW84ZXplNzBhMm5oOW14MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgQUggAC3Pfv687qPC/giphy.gif"
+          alt="Coding animation" loading="lazy" />
+        <div class="hero-gif-overlay"></div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ─── Filter Bar ─── -->
+  <div class="filter-wrap">
+    <div class="filter-bar" role="group" aria-label="ตัวกรองงาน">
+      <button class="filter-btn active" id="filter-all" onclick="filterCards('all')">ทั้งหมด</button>
+      <button class="filter-btn" id="filter-html" onclick="filterCards('html')">HTML</button>
+      <button class="filter-btn" id="filter-css" onclick="filterCards('css')">CSS</button>
+      <button class="filter-btn" id="filter-bs5" onclick="filterCards('bs5')">Bootstrap 5</button>
+      <button class="filter-btn" id="filter-js" onclick="filterCards('js')">JavaScript</button>
+      <button class="filter-btn" id="filter-flexgrid" onclick="filterCards('flexgrid')">Flex / Grid</button>
+    </div>
+  </div>
+
+  <!-- ─── Main Content ─── -->
+  <main class="main-content">
+
+    <!-- ═══ HTML Section ═══ -->
+    <div class="section" id="sec-html">
+      <div class="section-head" data-cat="html">
+        <div class="section-pill pill-orange">
+          <svg role="img" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z" />
+          </svg>
+          HTML
+        </div>
+        <div class="section-meta">
+          <div class="section-title">HTML Foundations</div>
+          <div class="section-desc">โครงสร้างพื้นฐานของเว็บ, Semantic HTML, Multi-page</div>
+        </div>
+        <span class="section-count">2 งาน</span>
+      </div>
+
+      <div class="grid grid-3">
+
+        <!-- Assignment 2 -->
+        <a class="card card-orange" data-tags="html" href="661568_Assignment 2/index.html" target="_blank"
+          rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#fb923c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 02</div>
+              <div class="card-title">เว็บท่องเที่ยวชลบุรี</div>
+            </div>
+          </div>
+          <p class="card-desc">เว็บไซต์แนะนำสถานที่ท่องเที่ยวในจังหวัดชลบุรี ครอบคลุมหาดบางแสน เกาะล้าน
+            สวนสัตว์เปิดเขาเขียว โดยใช้ HTML หลายหน้าเชื่อมกัน</p>
+          <div class="card-footer">
+            <span class="tag tag-html">HTML</span>
+          </div>
+        </a>
+
+        <!-- Lab HTML -->
+        <a class="card card-orange" data-tags="html" href="661568_Lab HTML/Home.html" target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#fb923c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3h6v11l3.5 6H5.5L9 14V3z" />
+                <path d="M6 9h12" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Lab HTML</div>
+              <div class="card-title">ปฏิบัติการ HTML พื้นฐาน</div>
+            </div>
+          </div>
+          <p class="card-desc">แบบฝึกหัดห้องปฏิบัติการครอบคลุม Inline styles, Internal styles และโครงสร้าง HTML
+            เบื้องต้น เพื่อฝึกทักษะการเขียนเว็บ</p>
+          <div class="card-footer">
+            <span class="tag tag-html">HTML</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ═══ CSS Section ═══ -->
+    <div class="section" id="sec-css">
+      <div class="section-head" data-cat="css">
+        <div class="section-pill pill-blue">
+          <svg role="img" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z" />
+          </svg>
+          CSS
+        </div>
+        <div class="section-meta">
+          <div class="section-title">CSS Styling</div>
+          <div class="section-desc">External stylesheet, Layout, Selectors, iFrame</div>
+        </div>
+        <span class="section-count">2 งาน</span>
+      </div>
+
+      <div class="grid grid-3">
+
+        <!-- Assignment 3 -->
+        <a class="card card-blue" data-tags="css html" href="661568_Assignment 3 - CSS/home.html" target="_blank"
+          rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19c-2.3 0-4-1.7-4-4 0-1.3.6-2.5 1.7-3.2L20 3l-1.8 10.3" />
+                <path d="M12 19v3M8 22h8" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 03</div>
+              <div class="card-title">CSS Styling — เว็บ Multi-page</div>
+            </div>
+          </div>
+          <p class="card-desc">นำ CSS มาตกแต่งเว็บไซต์หลายหน้า ประกอบด้วย Home, Study และ Web Video โดยใช้ External
+            stylesheet, ปุ่ม, รูปภาพ และการจัดวางเลย์เอาต์ขั้นพื้นฐาน</p>
+          <div class="card-footer">
+            <span class="tag tag-css">CSS</span>
+            <span class="tag tag-html">HTML</span>
+          </div>
+        </a>
+
+        <!-- Assignment 4-1 CSS iFrame -->
+        <a class="card card-blue" data-tags="css html" href="661568_Assignment 4-1 CSS-iFrame/resource-2/index.html"
+          target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 04-1</div>
+              <div class="card-title">CSS + iFrame</div>
+            </div>
+          </div>
+          <p class="card-desc">นำ CSS ร่วมกับ iFrame เพื่อฝังเนื้อหาจากหน้าอื่นและจัดการเลย์เอาต์ โดยใช้เทคนิค CSS
+            สำหรับควบคุมการแสดงผลของ frame</p>
+          <div class="card-footer">
+            <span class="tag tag-css">CSS</span>
+            <span class="tag tag-html">HTML</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ═══ Bootstrap 5 Section ═══ -->
+    <div class="section" id="sec-bs5">
+      <div class="section-head" data-cat="bs5">
+        <div class="section-pill pill-purple">
+          <svg role="img" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M11.77 11.24H9.956V8.202h2.152c1.17 0 1.834.522 1.834 1.466 0 1.008-.773 1.572-2.174 1.572zm.324 1.206H9.956v3.348h2.271c1.555 0 2.337-.606 2.337-1.681s-.826-1.667-2.47-1.667zM24 11.39v1.218C24 18.936 18.944 24 12.61 24H11.39C5.056 24 0 18.936 0 12.608V11.39C0 5.064 5.056 0 11.39 0H12.61C18.944 0 24 5.064 24 11.39zm-7.666 1.766c0-1.008-.46-1.923-1.244-2.496v-.055c.624-.528.98-1.291.98-2.13 0-1.756-1.352-2.945-3.504-2.945H8.183v11.94h5.073c2.152 0 3.533-1.077 3.533-2.833 0-1.596-.969-2.401-2.452-2.401z" />
+          </svg>
+          Bootstrap 5
+        </div>
+        <div class="section-meta">
+          <div class="section-title">Bootstrap 5</div>
+          <div class="section-desc">Grid System, Components, Typography, Forms</div>
+        </div>
+        <span class="section-count">5 งาน</span>
+      </div>
+
+      <div class="grid grid-3">
+
+        <!-- Assignment 4-2 BS5 -->
+        <a class="card card-purple" data-tags="bs5 css" href="661568_Assignment 4-2 - BS5/Font.html" target="_blank"
+          rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 04-2</div>
+              <div class="card-title">Bootstrap 5 — Typography & Utilities</div>
+            </div>
+          </div>
+          <p class="card-desc">ฝึกใช้ Bootstrap 5 ครอบคลุม Font, Text, Display, Background, Border, Margin, Padding,
+            Rounded, Icons และ Table styles ทั้งหมดในไฟล์แยกเฉพาะ</p>
+          <div class="card-footer">
+            <span class="tag tag-bs5">Bootstrap 5</span>
+            <span class="tag tag-css">CSS</span>
+          </div>
+        </a>
+
+        <!-- Assignment 5 BS2 -->
+        <a class="card card-purple" data-tags="bs5" href="661568_Assignment 5 - BS2/index.html" target="_blank"
+          rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 05-1</div>
+              <div class="card-title">Bootstrap Layout</div>
+            </div>
+          </div>
+          <p class="card-desc">สร้างเลย์เอาต์ด้วย Bootstrap Grid System ที่ตอบสนองต่อหน้าจอ (Responsive) พร้อม
+            Container, Row, Column และ Breakpoints ต่างๆ</p>
+          <div class="card-footer">
+            <span class="tag tag-bs5">Bootstrap 5</span>
+          </div>
+        </a>
+
+        <!-- Assignment 5 BS5-3 -->
+        <a class="card card-purple" data-tags="bs5" href="661568_Assignment 5 - BS5-3/index3.html" target="_blank"
+          rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="21" x2="4" y2="14" />
+                <line x1="4" y1="10" x2="4" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12" y2="3" />
+                <line x1="20" y1="21" x2="20" y2="16" />
+                <line x1="20" y1="12" x2="20" y2="3" />
+                <line x1="1" y1="14" x2="7" y2="14" />
+                <line x1="9" y1="8" x2="15" y2="8" />
+                <line x1="17" y1="16" x2="23" y2="16" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 05-2</div>
+              <div class="card-title">Bootstrap 5 Components</div>
+            </div>
+          </div>
+          <p class="card-desc">พัฒนาเว็บโดยใช้ Bootstrap 5 Components เช่น Navbar, Card, Button, Badge และ Accordion
+            เพื่อสร้าง UI ที่สมบูรณ์</p>
+          <div class="card-footer">
+            <span class="tag tag-bs5">Bootstrap 5</span>
+          </div>
+        </a>
+
+        <!-- Assignment 5 เว็บท่องเที่ยว -->
+        <a class="card card-purple" data-tags="bs5 html"
+          href="661568_Assignment 5- เว็บท่องเที่ยวระดับภูมิภาค/RegionalTourism/index.html" target="_blank"
+          rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 05-3</div>
+              <div class="card-title">เว็บท่องเที่ยวระดับภูมิภาค</div>
+            </div>
+          </div>
+          <p class="card-desc">เว็บไซต์ท่องเที่ยวระดับภูมิภาคสร้างด้วย Bootstrap 5 ที่มีการออกแบบ Responsive
+            รองรับทุกขนาดหน้าจอ พร้อม Card และ Navigation</p>
+          <div class="card-footer">
+            <span class="tag tag-bs5">Bootstrap 5</span>
+            <span class="tag tag-html">HTML</span>
+          </div>
+        </a>
+
+        <!-- Assignment 5 ออกแบบฟอร์ม -->
+        <a class="card card-purple" data-tags="bs5 form" href="661568_Assignment 5 - ออกแบบฟอร์ม/Form_ass5.html"
+          target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 05-4</div>
+              <div class="card-title">ออกแบบฟอร์ม Bootstrap</div>
+            </div>
+          </div>
+          <p class="card-desc">ออกแบบฟอร์มกรอกข้อมูลด้วย Bootstrap 5 Form Components ครอบคลุม Input, Select, Checkbox,
+            Radio และ Validation styles</p>
+          <div class="card-footer">
+            <span class="tag tag-bs5">Bootstrap 5</span>
+            <span class="tag tag-form">Form</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ═══ Flexbox & Grid Section ═══ -->
+    <div class="section" id="sec-flexgrid">
+      <div class="section-head" data-cat="flexgrid">
+        <div class="section-pill pill-green">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
+          </svg>
+          Flex / Grid
+        </div>
+        <div class="section-meta">
+          <div class="section-title">Flexbox &amp; CSS Grid</div>
+          <div class="section-desc">Layout System, Responsive Design, Grid Patterns</div>
+        </div>
+        <span class="section-count">3 งาน</span>
+      </div>
+
+      <div class="grid grid-3">
+
+        <!-- Assignment 6 Flexbox -->
+        <a class="card card-green" data-tags="flexgrid css" href="661568_Assignment 6 - BS5-4/flexbox-index.html"
+          target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#34d399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="21 8 21 21 3 21 3 8" />
+                <rect x="1" y="3" width="22" height="5" />
+                <line x1="10" y1="12" x2="14" y2="12" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 06</div>
+              <div class="card-title">Flexbox Layout Tutorial</div>
+            </div>
+          </div>
+          <p class="card-desc">บทเรียนเชิงปฏิบัติเรื่อง CSS Flexbox ครอบคลุม flex-direction, flex-wrap, justify-content,
+            align-items, align-content, align-self และ flex-grow พร้อม live demo</p>
+          <div class="card-footer">
+            <span class="tag tag-flex">Flexbox</span>
+            <span class="tag tag-css">CSS</span>
+          </div>
+        </a>
+
+        <!-- Assignment 7 Grid -->
+        <a class="card card-green" data-tags="flexgrid css bs5" href="661568_Assignment 7 - BS5-4/Responsive All.html"
+          target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#34d399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 07-1</div>
+              <div class="card-title">CSS Grid &amp; Responsive Design</div>
+            </div>
+          </div>
+          <p class="card-desc">ฝึก Bootstrap Grid System ขั้นสูง: Breakpoints, Gutter, Responsive layout หลายขนาด
+            พร้อมการทำ Card-based layout ที่ตอบสนองทุก viewport</p>
+          <div class="card-footer">
+            <span class="tag tag-grid">Grid</span>
+            <span class="tag tag-bs5">Bootstrap 5</span>
+          </div>
+        </a>
+
+        <!-- Assignment 7 ปรับฟอร์ม -->
+        <a class="card card-green" data-tags="flexgrid bs5 form"
+          href="661568_Assignment 7 - ปรับแบบฟอร์ม/Form_ass5.html" target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#34d399" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 07-2</div>
+              <div class="card-title">ปรับแบบฟอร์มด้วย Grid</div>
+            </div>
+          </div>
+          <p class="card-desc">นำ CSS Grid / Bootstrap Grid มาปรับปรุงการจัดวางฟอร์มให้ Responsive สวยงาม
+            รองรับทุกขนาดหน้าจอ</p>
+          <div class="card-footer">
+            <span class="tag tag-grid">Grid</span>
+            <span class="tag tag-form">Form</span>
+            <span class="tag tag-bs5">Bootstrap 5</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ═══ JavaScript Section ═══ -->
+    <div class="section" id="sec-js">
+      <div class="section-head" data-cat="js">
+        <div class="section-pill pill-yellow">
+          <svg role="img" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" />
+          </svg>
+          JavaScript
+        </div>
+        <div class="section-meta">
+          <div class="section-title">JavaScript Front-End</div>
+          <div class="section-desc">DOM Manipulation, Functions, Arrays, OOP, Event Handling</div>
+        </div>
+        <span class="section-count">5 งาน</span>
+      </div>
+
+      <div class="grid grid-2">
+
+        <!-- Assignment 8 #1-1 -->
+        <a class="card card-yellow" data-tags="js html" href="661568_Assignment 8 - JavaScript Front-End 1-1/index.html"
+          target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg role="img" viewBox="0 0 24 24" width="22" height="22" fill="#fbbf24">
+                <path
+                  d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 08-1</div>
+              <div class="card-title">JavaScript Front-End #1-1</div>
+            </div>
+          </div>
+          <p class="card-desc">เริ่มต้น JavaScript Front-End: การใช้ Inline, Internal และ External scripts, Inline
+            styles ผ่าน JS, DOM Manipulation เบื้องต้น และ Event Handling (มี 11 แบบฝึกหัดย่อย)</p>
+          <div class="card-footer">
+            <span class="tag tag-js">JavaScript</span>
+            <span class="tag tag-html">HTML</span>
+          </div>
+        </a>
+
+        <!-- Assignment 8 #1-2 -->
+        <a class="card card-yellow" data-tags="js html" href="661568_Assignment 8 - JavaScript Front-End 1-2/index.html"
+          target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg role="img" viewBox="0 0 24 24" width="22" height="22" fill="#fbbf24">
+                <path
+                  d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">Assignment 08-2</div>
+              <div class="card-title">JavaScript Front-End #1-2</div>
+            </div>
+          </div>
+          <p class="card-desc">JavaScript ขั้นกลาง: Functions, Variables (var/let/const), Data Types, Operators
+            และการประยุกต์ใช้งาน JS กับ HTML Elements (Array, OOP, Loops)</p>
+          <div class="card-footer">
+            <span class="tag tag-js">JavaScript</span>
+            <span class="tag tag-html">HTML</span>
+          </div>
+        </a>
+
+        <!-- JS ข้อ1 -->
+        <a class="card card-yellow" data-tags="js"
+          href="661568_Assignment-JavaScritp-ข้อ1 ระบบคำนวณราคาสินค้าและแสดงผลการสั่งซื้อ/index.html" target="_blank"
+          rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#fbbf24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">JavaScript ข้อ 1</div>
+              <div class="card-title">ระบบคำนวณราคาสินค้า</div>
+            </div>
+          </div>
+          <p class="card-desc">แอปพลิเคชัน POS อย่างง่าย คำนวณราคาสินค้า คิดส่วนลด และแสดงผลสรุปการสั่งซื้อแบบ Real-time
+            ด้วย JavaScript ล้วนๆ ไม่พึ่ง Library ภายนอก</p>
+          <div class="card-footer">
+            <span class="tag tag-js">JavaScript</span>
+            <span class="tag tag-form">Form Logic</span>
+          </div>
+        </a>
+
+        <!-- JS ข้อ2 -->
+        <a class="card card-yellow" data-tags="js" href="661568_Assignment-JavaScritp-ข้อ2 Array and Object/index.html"
+          target="_blank" rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#fbbf24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4.03 3-9 3S3 13.66 3 12" />
+                <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">JavaScript ข้อ 2</div>
+              <div class="card-title">Array and Object</div>
+            </div>
+          </div>
+          <p class="card-desc">ฝึกทักษะ Array Methods (map, filter, reduce) และ Object Manipulation ใน JavaScript
+            พร้อมแสดงผลลัพธ์แบบ Dynamic บน Browser</p>
+          <div class="card-footer">
+            <span class="tag tag-js">JavaScript</span>
+          </div>
+        </a>
+
+        <!-- JS ข้อ3 -->
+        <a class="card card-yellow" data-tags="js" href="661568_Assignment-JavaScritp-ข้อ 3/index.html" target="_blank"
+          rel="noopener">
+          <span class="card-arrow">↗</span>
+          <div class="card-head">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#fbbf24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <div class="card-meta">
+              <div class="card-num">JavaScript ข้อ 3</div>
+              <div class="card-title">JavaScript Advanced Logic</div>
+            </div>
+          </div>
+          <p class="card-desc">JavaScript ขั้นสูง: ใช้ Conditional Logic, Loops, Functions และ DOM Manipulation
+            เพื่อสร้าง Interactive Web Application ที่สมบูรณ์</p>
+          <div class="card-footer">
+            <span class="tag tag-js">JavaScript</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ─── Footer ─── -->
+  <footer>
+    <div class="footer-logo">
+      <div class="footer-logo-icon">
+        <svg viewBox="0 0 24 24" fill="white">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+      </div>
+      CS3493 Full Stack Web Development
+    </div>
+    <p class="footer-info">Student ID: <span>661568</span> &nbsp;·&nbsp; Huachiew Chalermprakiet University
+      &nbsp;·&nbsp; &copy; 2026</p>
+    <div class="footer-built">
+      <span>Built with</span>
+      <div class="tags">
+        <span class="tag tag-html">HTML</span>
+        <span class="tag tag-css">CSS</span>
+        <span class="tag tag-js">JavaScript</span>
+        <span class="tag tag-bs5">Bootstrap 5</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ── Filter Logic ── */
+    function filterCards(cat) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.id === 'filter-' + cat);
+      });
+      document.querySelectorAll('.card').forEach(card => {
+        const tags = card.dataset.tags || '';
+        if (cat === 'all' || tags.split(' ').includes(cat)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    /* ── Counter Animation ── */
+    function animateCounter(el, target, duration = 1200) {
+      let start = 0;
+      const step = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += step;
+        if (start >= target) { el.textContent = target; clearInterval(timer); return; }
+        el.textContent = Math.floor(start);
+      }, 16);
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(document.getElementById('counter-assignments'), 17);
+          animateCounter(document.getElementById('counter-tech'), 5);
+          animateCounter(document.getElementById('counter-semester'), 1, 600);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(document.querySelector('.hero-stats'));
+
+    /* ── Card entrance animation ── */
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      .card { animation: fadeUp 0.5s ease both; }
+    `;
+    document.head.appendChild(style);
+
+    document.querySelectorAll('.card').forEach((card, i) => {
+      card.style.animationDelay = (i * 0.06) + 's';
+    });
+
+    /* ── Section filter click ── */
+    document.querySelectorAll('.section-head[data-cat]').forEach(head => {
+      head.style.cursor = 'pointer';
+      head.title = 'คลิกเพื่อกรองหมวดนี้';
+      head.addEventListener('click', () => filterCards(head.dataset.cat));
+    });
+
+    /* ── Typing Effect ── */
+    (function () {
+      const lines = [
+        'รวมงานมอบหมายตลอดภาคการศึกษา',
+        'ตั้งแต่ HTML พื้นฐาน จนถึง JavaScript',
+        'Front-End · Bootstrap 5 · CSS Grid',
+      ];
+      const el = document.getElementById('typed-text');
+      let lineIdx = 0, charIdx = 0, deleting = false;
+      function type() {
+        const current = lines[lineIdx];
+        if (!deleting) {
+          el.textContent = current.slice(0, ++charIdx);
+          if (charIdx === current.length) {
+            deleting = true;
+            setTimeout(type, 2000);
+            return;
+          }
+        } else {
+          el.textContent = current.slice(0, --charIdx);
+          if (charIdx === 0) {
+            deleting = false;
+            lineIdx = (lineIdx + 1) % lines.length;
+          }
+        }
+        setTimeout(type, deleting ? 35 : 60);
+      }
+      setTimeout(type, 800);
+    })();
+
+    /* ── Particle Canvas (Static) ── */
+    (function () {
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      let w, h, particles;
+
+      function rand(min, max) { return Math.random() * (max - min) + min; }
+
+      function initParticles() {
+        particles = Array.from({ length: 90 }, () => ({
+          x: rand(0, w), y: rand(0, h),
+          r: rand(1, 2.2),
+          alpha: rand(0.3, 0.7)
+        }));
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+
+        /* Draw connecting lines */
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 130) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(99,179,237,${0.10 * (1 - dist / 130)})`;
+              ctx.lineWidth = 0.6;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        /* Draw dots */
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(99,179,237,${p.alpha})`;
+          ctx.fill();
+        });
+      }
+
+      function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+        initParticles(); // Re-seed particles so they fill the new area
+        draw();          // Draw once
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+    })();
+  </script>
+
+</body>
+
+</html>

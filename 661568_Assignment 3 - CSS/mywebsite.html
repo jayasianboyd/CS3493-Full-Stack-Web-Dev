@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>เว็บไซต์แนะนำตัวเอง</title>
+
+    <!--
+        mystyle.css โหลดก่อน แล้ว style block ด้านล่างจะ override ทุกอย่าง
+    -->
+    <link rel="stylesheet" type="text/css" href="mycss/mystyle.css">
+
+    <style>
+        /* =========================================================
+           HARD RESET — override ทุกอย่างจาก mystyle.css
+        ========================================================= */
+        html, body {
+            background-color: #eaf4fb !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            font-family: 'TH Sarabun New', Sarabun, sans-serif !important;
+            color: #222 !important;
+        }
+
+        div, section, article, main, aside, span, p {
+            background-color: transparent; /* reset ทุก element ก่อน */
+        }
+
+        * { box-sizing: border-box; }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+        #header-section {
+            background-color: #1a1a2e !important;
+            color: white !important;
+            text-align: center;
+            padding: 16px 24px;
+        }
+
+        #header-section h1 {
+            margin: 0;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 34px;
+            text-shadow: 2px 2px 0 #1E90FF;
+            color: white !important;
+        }
+
+        /* =========================================================
+           MENU
+        ========================================================= */
+        #menu-section {
+            background-color: #2e86ab !important;
+            padding: 8px 24px;
+            display: flex !important;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        }
+
+        #menu-section .menu-tag {
+            font-size: 16px;
+            font-weight: bold;
+            color: #cceeff;
+            margin-right: 6px;
+        }
+
+        .menu-link {
+            background-color: #1a1a2e !important;
+            color: white !important;
+            padding: 5px 16px !important;
+            text-decoration: none !important;
+            font-weight: bold !important;
+            font-size: 16px !important;
+            border-radius: 4px !important;
+            margin-left: 0 !important;
+            transition: background-color 0.2s;
+        }
+
+        .menu-link:hover {
+            background-color: #1E90FF !important;
+        }
+
+        /* =========================================================
+           PAGE WRAPPER
+        ========================================================= */
+        #page-wrapper {
+            max-width: 820px;
+            margin: 30px auto 0;
+            padding: 0 20px 60px;
+            background-color: transparent !important;
+        }
+
+        /* =========================================================
+           MARQUEE BOX
+        ========================================================= */
+        #marquee-box {
+            background-color: #ffffff !important;
+            border-radius: 10px;
+            padding: 10px 0 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+            margin-bottom: 28px;
+        }
+
+        #marquee-box .box-tag {
+            display: block;
+            font-size: 12px;
+            color: #bbb;
+            padding-left: 14px;
+            margin-bottom: 4px;
+        }
+
+        /* =========================================================
+           SECTION TITLE
+        ========================================================= */
+        .section-tag {
+            font-size: 13px;
+            color: #bbb;
+            margin-bottom: 10px;
+        }
+
+        /* =========================================================
+           INFO GRID — ชื่อ + 3 การ์ดรูป
+        ========================================================= */
+
+        /* การ์ดชื่อ */
+        .name-card {
+            background-color: #ffffff !important;
+            border-radius: 10px;
+            padding: 16px 22px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            border-left: 4px solid #2e86ab;
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+
+        .name-card .label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #2e86ab;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .name-card .value {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1a1a2e;
+        }
+
+        /* 3 การ์ดรูป — grid 3 คอลัมน์ */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .info-card {
+            background-color: #ffffff !important;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-card .card-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .info-card .card-body {
+            padding: 12px 14px 14px;
+        }
+
+        .info-card .card-label {
+            font-size: 13px;
+            font-weight: bold;
+            color: #2e86ab;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 4px;
+        }
+
+        .info-card .card-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a1a2e;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+        #footer-section {
+            background-color: #1a1a2e !important;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 0;
+        }
+
+        address {
+            font-size: 16px !important;
+            font-style: normal !important;
+            color: #c9b8ff !important;
+            margin: 0 !important;
+            margin-left: 0 !important;
+        }
+
+        address span {
+            text-decoration: underline;
+        }
+
+        .footer-tag {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 4px;
+        }
+
+        .filename-label {
+            font-size: 15px;
+            color: #777;
+        }
+
+        .purple-text { color: #c9b8ff; }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header-section">
+        <h1>&lt;div&gt; เว็บไซต์แนะนำตัวเอง</h1>
+    </div>
+
+    <!-- MENU -->
+    <div id="menu-section">
+        <span class="menu-tag">&lt;div&gt;</span>
+        <a href="home.html" class="menu-link">HOME</a>
+        <a href="study.html" class="menu-link">STUDY</a>
+        <a href="viewBuild/album/index1.html" class="menu-link">GALLERY</a>
+        <a href="webvideo.html" class="menu-link">VIDEO</a>
+        <a href="mywebsite.html" class="menu-link">CONTACT</a>
+    </div>
+
+    <!-- PAGE WRAPPER -->
+    <div id="page-wrapper">
+
+        <!-- MARQUEE -->
+        <div id="marquee-box">
+            <span class="box-tag">&lt;div&gt; &lt;marquee&gt;</span>
+            <marquee scrollamount="10" direction="left">
+                <img src="picture/gif1.jpg" height="90" style="margin-right: 20px;">
+                <img src="picture/gif2.jpg" height="90" style="margin-right: 20px;">
+                <img src="picture/gif3.jpg" height="90" style="margin-right: 20px;">
+            </marquee>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="section-tag">&lt;div&gt;</div>
+
+        <!-- ชื่อ-นามสกุล -->
+        <div class="name-card">
+            <div class="label">ชื่อ-นามสกุล</div>
+            <div class="value">Peeratut Waritum</div>
+        </div>
+
+        <!-- 3 การ์ดรูป: สถานที่ / อาหาร / งานอดิเรก -->
+        <div class="cards-grid">
+
+            <div class="info-card">
+                <img class="card-img" src="picture/sea.jpg" alt="สถานที่">
+                <div class="card-body">
+                    <div class="card-label">สถานที่ท่องเที่ยวที่ชอบ</div>
+                    <div class="card-value">แบงแสน</div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <img class="card-img" src="picture/ramen.jpg" alt="อาหาร">
+                <div class="card-body">
+                    <div class="card-label">อาหารที่ชอบ</div>
+                    <div class="card-value">ราเมน</div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <img class="card-img" src="picture/game.png" alt="งานอดิเรก">
+                <div class="card-body">
+                    <div class="card-label">งานอดิเรก</div>
+                    <div class="card-value">เล่นเกม</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer-section">
+        <div>
+            <div class="footer-tag">&lt;address&gt;</div>
+            <address>
+                written by <span>Peeratut Waritum</span><br>
+                Visit us at : 661568@hcu.ac.th
+            </address>
+        </div>
+        <div class="filename-label">661568MyWebSite.html</div>
+    </div>
+
+</body>
+
+</html>

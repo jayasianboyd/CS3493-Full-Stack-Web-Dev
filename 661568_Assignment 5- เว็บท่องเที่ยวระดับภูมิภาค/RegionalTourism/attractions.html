@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สถานที่ท่องเที่ยว - ท่องเที่ยวภาคเหนือ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-tree"></i> ท่องเที่ยวภาคเหนือ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house"></i> หน้าหลัก
+                        </a>
+                    </li>
+                    <!-- Dropdown: สถานที่ท่องเที่ยว -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-geo-alt"></i> สถานที่ท่องเที่ยว
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="attractions.html">
+                                    <i class="bi bi-list-ul me-2"></i>ทั้งหมด
+                                </a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="attractions.html#nature">
+                                    <i class="bi bi-tree me-2 text-success"></i>ธรรมชาติและภูเขา
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#temple">
+                                    <i class="bi bi-building me-2 text-warning"></i>วัดและวัฒนธรรม
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#activity">
+                                    <i class="bi bi-bicycle me-2 text-info"></i>กิจกรรมผจญภัย
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#market">
+                                    <i class="bi bi-shop me-2 text-danger"></i>ตลาดและของฝาก
+                                </a></li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown: จังหวัด -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-map"></i> จังหวัด
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="attractions.html#chiangmai">
+                                    <i class="bi bi-geo-fill me-2 text-success"></i>เชียงใหม่
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#chiangrai">
+                                    <i class="bi bi-geo-fill me-2 text-primary"></i>เชียงราย
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#lamphun">
+                                    <i class="bi bi-geo-fill me-2 text-warning"></i>ลำพูน
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#lampang">
+                                    <i class="bi bi-geo-fill me-2 text-danger"></i>ลำปาง
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#phrae">
+                                    <i class="bi bi-geo-fill me-2 text-info"></i>แพร่
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#nan">
+                                    <i class="bi bi-geo-fill me-2 text-secondary"></i>น่าน
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#phayao">
+                                    <i class="bi bi-geo-fill me-2 text-success"></i>พะเยา
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#maehongson">
+                                    <i class="bi bi-geo-fill me-2 text-primary"></i>แม่ฮ่องสอน
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#uttaradit">
+                                    <i class="bi bi-geo-fill me-2 text-warning"></i>อุตรดิตถ์
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="accommodation.html">
+                            <i class="bi bi-building"></i> ที่พักและอาหาร
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope"></i> ติดต่อเรา
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-success text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold"><i class="bi bi-geo-alt-fill"></i> สถานที่ท่องเที่ยว</h1>
+            <p class="lead">สำรวจสถานที่ท่องเที่ยวยอดนิยมในภาคเหนือ</p>
+        </div>
+    </section>
+
+    <!-- ===== หมวด: ธรรมชาติและภูเขา ===== -->
+    <section id="nature" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold text-success mb-4"><i class="bi bi-tree-fill"></i> ธรรมชาติและภูเขา</h2>
+            <p class="text-center text-muted mb-5">สัมผัสความงดงามของธรรมชาติ ภูเขา น้ำตก และทะเลหมอกภาคเหนือ</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/ดอยอินทนนท์.jpg" class="card-img-top" style="height: 200px; object-fit: cover;"
+                            alt="ดอยอินทนนท์">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">ดอยอินทนนท์</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงใหม่</p>
+                            <p class="card-text">ยอดเขาสูงสุดของประเทศไทย สูง 2,565 เมตร มีน้ำตกวชิรธาร น้ำตกแม่กลาง
+                                และพระมหาธาตุนภเมทนีดล-นภพลภูมิสิริ</p>
+                            <span class="badge bg-success">ธรรมชาติ</span>
+                            <span class="badge bg-secondary">เชียงใหม่</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accN1">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dN1"><i
+                                                class="bi bi-info-circle me-2 text-success"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dN1" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-thermometer-snow me-1 text-info"></i>
+                                                <strong>อุณหภูมิ:</strong> 5-15°C ในฤดูหนาว
+                                            </p>
+                                            <p><i class="bi bi-calendar me-1 text-primary"></i>
+                                                <strong>ช่วงที่ดีที่สุด:</strong> พ.ย. - ก.พ.
+                                            </p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>พระมหาธาตุนภเมทนีดล-นภพลภูมิสิริ</li>
+                                                <li>น้ำตกวชิรธาร น้ำตกแม่กลาง</li>
+                                                <li>เส้นทางกิ่วแม่ปาน</li>
+                                                <li>ทะเลหมอกยามเช้า</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ผู้ใหญ่ 300 / เด็ก 150 บาท</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/ดอยตุง.jpg" class="card-img-top" style="height: 200px; object-fit: cover;"
+                            alt="ดอยตุง">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">ดอยตุง</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงราย</p>
+                            <p class="card-text">พระตำหนักดอยตุงและสวนแม่ฟ้าหลวง ชมดอกไม้เมืองหนาวหลากสีสัน
+                                ท่ามกลางอากาศเย็นสบายตลอดปี</p>
+                            <span class="badge bg-success">ธรรมชาติ</span>
+                            <span class="badge bg-secondary">เชียงราย</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accN2">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dN2"><i
+                                                class="bi bi-info-circle me-2 text-success"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dN2" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-clock me-1 text-primary"></i> <strong>เวลาเปิด:</strong>
+                                                06:30-17:30 น.</p>
+                                            <p><i class="bi bi-calendar me-1 text-primary"></i>
+                                                <strong>ช่วงที่ดีที่สุด:</strong> พ.ย. - มี.ค.
+                                            </p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>พระตำหนักดอยตุง</li>
+                                                <li>สวนแม่ฟ้าหลวง</li>
+                                                <li>กาแฟดอยตุง</li>
+                                                <li>หอแห่งแรงบันดาลใจ</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ตั๋วรวม 290 บาท</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/ภูชี้ฟ้า.jpg" class="card-img-top" style="height: 200px; object-fit: cover;"
+                            alt="ภูชี้ฟ้า">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">ภูชี้ฟ้า</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงราย</p>
+                            <p class="card-text">จุดชมทะเลหมอกและพระอาทิตย์ขึ้นที่สวยงามที่สุดแห่งหนึ่ง
+                                ยอดเขาแหลมชี้ขึ้นฟ้าเป็นเอกลักษณ์</p>
+                            <span class="badge bg-success">ธรรมชาติ</span>
+                            <span class="badge bg-secondary">เชียงราย</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accN3">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dN3"><i
+                                                class="bi bi-info-circle me-2 text-success"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dN3" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-thermometer-snow me-1 text-info"></i>
+                                                <strong>อุณหภูมิ:</strong> 5-10°C ในฤดูหนาว
+                                            </p>
+                                            <p><i class="bi bi-calendar me-1 text-primary"></i>
+                                                <strong>ช่วงที่ดีที่สุด:</strong> พ.ย. - ม.ค.
+                                            </p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>ทะเลหมอกและพระอาทิตย์ขึ้น</li>
+                                                <li>ยอดเขาแหลมรูปนิ้วชี้ฟ้า</li>
+                                                <li>วิวชายแดนไทย-ลาว</li>
+                                                <li>ดอกซากุระ ดอกเสี้ยว</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ผู้ใหญ่ 100 / เด็ก 50 บาท</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/ธรรมชาติสวยงาม.jpg" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" alt="ดอยภูคา">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">อุทยานแห่งชาติดอยภูคา</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.น่าน</p>
+                            <p class="card-text">อุทยานที่มีต้นชมพูภูคาเป็นเอกลักษณ์ ดอกไม้หายากที่พบเฉพาะที่นี่
+                                พร้อมทะเลหมอกยามเช้า</p>
+                            <span class="badge bg-success">ธรรมชาติ</span>
+                            <span class="badge bg-secondary">น่าน</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accN4">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dN4"><i
+                                                class="bi bi-info-circle me-2 text-success"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dN4" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-flower1 me-1 text-danger"></i> <strong>จุดเด่น:</strong>
+                                                ต้นชมพูภูคา ดอกไม้หายากพบเฉพาะที่นี่</p>
+                                            <p><i class="bi bi-calendar me-1 text-primary"></i>
+                                                <strong>ช่วงดอกบาน:</strong> ก.พ. - มี.ค.
+                                            </p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>ต้นชมพูภูคา</li>
+                                                <li>ลานดินแดง จุดชมทะเลหมอก</li>
+                                                <li>น้ำตกภูฟ้า</li>
+                                                <li>เส้นทางเดินป่าศึกษาธรรมชาติ</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ผู้ใหญ่ 100 / เด็ก 50 บาท</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/เกี่ยวกับภาคเหนือ.png" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" alt="กว๊านพะเยา">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">กว๊านพะเยา</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.พะเยา</p>
+                            <p class="card-text">ทะเลสาบน้ำจืดขนาดใหญ่ จุดชมพระอาทิตย์ตกสวยงาม
+                                มีวัดติโลกอารามอยู่กลางน้ำ</p>
+                            <span class="badge bg-success">ธรรมชาติ</span>
+                            <span class="badge bg-secondary">พะเยา</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accN5">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dN5"><i
+                                                class="bi bi-info-circle me-2 text-success"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dN5" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-water me-1 text-primary"></i> <strong>ขนาด:</strong>
+                                                ทะเลสาบน้ำจืด 12,831 ไร่</p>
+                                            <p><i class="bi bi-sunset me-1 text-warning"></i> <strong>จุดชมวิว:</strong>
+                                                พระอาทิตย์ตกริมกว๊าน</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>วัดติโลกอาราม (วัดกลางน้ำ)</li>
+                                                <li>ปั่นจักรยานรอบกว๊าน</li>
+                                                <li>ล่องเรือชมทิวทัศน์</li>
+                                                <li>ตลาดริมกว๊าน</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ฟรี</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/ปาย.jpg" class="card-img-top" style="height: 200px; object-fit: cover;"
+                            alt="ปาย">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">ปาย</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.แม่ฮ่องสอน</p>
+                            <p class="card-text">เมืองเล็กๆ ท่ามกลางหุบเขา มีสะพานประวัติศาสตร์ปาย หมู่บ้านจีนยูนนาน
+                                และจุดชมวิวหยุนไหล</p>
+                            <span class="badge bg-success">ธรรมชาติ</span>
+                            <span class="badge bg-secondary">แม่ฮ่องสอน</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accN6">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dN6"><i
+                                                class="bi bi-info-circle me-2 text-success"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dN6" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-signpost me-1 text-info"></i> <strong>ระยะทาง:</strong>
+                                                ห่างจากเชียงใหม่ 135 กม. (762 โค้ง)</p>
+                                            <p><i class="bi bi-thermometer-snow me-1 text-info"></i>
+                                                <strong>อุณหภูมิ:</strong> 10-20°C ในฤดูหนาว
+                                            </p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>สะพานประวัติศาสตร์ปาย</li>
+                                                <li>หมู่บ้านสันติชน</li>
+                                                <li>จุดชมวิวหยุนไหล</li>
+                                                <li>น้ำพุร้อนท่าปาย</li>
+                                                <li>ถนนคนเดินปาย</li>
+                                            </ul>
+                                            <p><i class="bi bi-cup-hot me-1 text-danger"></i>
+                                                <strong>อาหารแนะนำ:</strong> ข้าวซอย, ชาจีน, ขนมจีนน้ำเงี้ยว
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== หมวด: วัดและวัฒนธรรม ===== -->
+    <section id="temple" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold text-warning mb-4"><i class="bi bi-building"></i> วัดและวัฒนธรรม</h2>
+            <p class="text-center text-muted mb-5">สถาปัตยกรรมล้านนาอันเก่าแก่และวัดที่มีชื่อเสียงทั่วภาคเหนือ</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/วัดพระธาตุดอยสุเทพ.jpg" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" alt="วัดพระธาตุดอยสุเทพ">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">วัดพระธาตุดอยสุเทพ</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงใหม่</p>
+                            <p class="card-text">วัดศักดิ์สิทธิ์คู่บ้านคู่เมืองเชียงใหม่ ตั้งอยู่บนดอยสุเทพ สร้างเมื่อ
+                                พ.ศ. 1929</p>
+                            <span class="badge bg-warning text-dark">วัฒนธรรม</span>
+                            <span class="badge bg-secondary">เชียงใหม่</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accT1">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dT1"><i
+                                                class="bi bi-info-circle me-2 text-warning"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dT1" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-clock me-1 text-primary"></i> <strong>เปิด:</strong>
+                                                06:00-18:00 น.</p>
+                                            <p><i class="bi bi-stairs me-1 text-info"></i> <strong>เข้าถึง:</strong>
+                                                บันไดนาค 309 ขั้น หรือรถราง</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>พระบรมสารีริกธาตุ</li>
+                                                <li>เจดีย์ทองคำ</li>
+                                                <li>จุดชมวิวเมืองเชียงใหม่</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ไทย 30 / ต่างชาติ 50 บาท</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/วัดร่องขุ่น.jpg" class="card-img-top" style="height: 200px; object-fit: cover;"
+                            alt="วัดร่องขุ่น">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">วัดร่องขุ่น</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงราย</p>
+                            <p class="card-text">วัดสีขาวสวยงามออกแบบโดยอาจารย์เฉลิมชัย โฆษิตพิพัฒน์</p>
+                            <span class="badge bg-warning text-dark">วัฒนธรรม</span>
+                            <span class="badge bg-secondary">เชียงราย</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accT2">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dT2"><i
+                                                class="bi bi-info-circle me-2 text-warning"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dT2" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-person me-1 text-warning"></i>
+                                                <strong>ผู้ออกแบบ:</strong> อ.เฉลิมชัย โฆษิตพิพัฒน์
+                                            </p>
+                                            <p><i class="bi bi-clock me-1 text-primary"></i> <strong>เปิด:</strong>
+                                                08:00-17:00 น.</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>อุโบสถสีขาว</li>
+                                                <li>สะพานวงจรสังสารวัฏ</li>
+                                                <li>หอพระไตรปิฎกสีทอง</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ไทย ฟรี / ต่างชาติ 100 บาท</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/วัดและวัฒนธรรม.jpg" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" alt="วัดพระธาตุลำปางหลวง">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">วัดพระธาตุลำปางหลวง</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.ลำปาง</p>
+                            <p class="card-text">วัดเก่าแก่ที่สุดแห่งหนึ่งของล้านนา มีเจดีย์ทรงล้านนาและพระแก้วมรกตจำลอง
+                            </p>
+                            <span class="badge bg-warning text-dark">วัฒนธรรม</span>
+                            <span class="badge bg-secondary">ลำปาง</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accT3">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dT3"><i
+                                                class="bi bi-info-circle me-2 text-warning"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dT3" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-calendar me-1 text-primary"></i> <strong>อายุ:</strong>
+                                                กว่า 1,000 ปี</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>เจดีย์ทรงล้านนาแท้</li>
+                                                <li>พระแก้วดอนเต้า</li>
+                                                <li>เงาพระธาตุกลับหัว</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ฟรี</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/วัดและวัฒนธรรม.jpg" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" alt="วัดพระธาตุหริภุญชัย">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">วัดพระธาตุหริภุญชัย</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.ลำพูน</p>
+                            <p class="card-text">วัดหลวงคู่เมืองลำพูน 1 ใน 8 จอมเจดีย์ของไทย อายุกว่า 1,000 ปี</p>
+                            <span class="badge bg-warning text-dark">วัฒนธรรม</span>
+                            <span class="badge bg-secondary">ลำพูน</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accT4">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dT4"><i
+                                                class="bi bi-info-circle me-2 text-warning"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dT4" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-calendar me-1 text-primary"></i> <strong>สร้าง:</strong>
+                                                สมัยพระนางจามเทวี 1,000+ ปี</p>
+                                            <p><i class="bi bi-award me-1 text-danger"></i> <strong>สถานะ:</strong> 1 ใน
+                                                8 จอมเจดีย์ของไทย</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>เจดีย์ทรงล้านนาสูง 26 เมตร</li>
+                                                <li>พิพิธภัณฑ์วัด</li>
+                                                <li>ต้นยางนายักษ์ 700 ปี</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ฟรี</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/วัดและวัฒนธรรม.jpg" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" alt="วัดภูมินทร์">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">วัดภูมินทร์</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.น่าน</p>
+                            <p class="card-text">วัดที่มีภาพจิตรกรรมฝาผนัง "ปู่ม่าน ย่าม่าน กระซิบรัก" อันโด่งดัง</p>
+                            <span class="badge bg-warning text-dark">วัฒนธรรม</span>
+                            <span class="badge bg-secondary">น่าน</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accT5">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dT5"><i
+                                                class="bi bi-info-circle me-2 text-warning"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dT5" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-palette me-1 text-danger"></i> <strong>จุดเด่น:</strong>
+                                                จิตรกรรม "กระซิบรัก" โด่งดังทั่วโลก</p>
+                                            <p><i class="bi bi-building me-1 text-info"></i>
+                                                <strong>สถาปัตยกรรม:</strong> จตุรมุข ไม่เหมือนวัดใด
+                                            </p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>ภาพปู่ม่าน ย่าม่าน กระซิบรัก</li>
+                                                <li>โบสถ์จตุรมุข</li>
+                                                <li>พญานาค 2 ตัว เป็นบันไดขึ้น-ลง</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ฟรี</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/วัดและวัฒนธรรม.jpg" class="card-img-top"
+                            style="height: 200px; object-fit: cover;" alt="คุ้มเจ้าหลวง">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">คุ้มเจ้าหลวงเมืองแพร่</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.แพร่</p>
+                            <p class="card-text">คุ้มสถาปัตยกรรมไทยผสมยุโรป สร้างในสมัยรัชกาลที่ 5</p>
+                            <span class="badge bg-warning text-dark">วัฒนธรรม</span>
+                            <span class="badge bg-secondary">แพร่</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accT6">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dT6"><i
+                                                class="bi bi-info-circle me-2 text-warning"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dT6" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-building me-1 text-info"></i> <strong>สไตล์:</strong>
+                                                ไทยผสมยุโรป สมัย ร.5</p>
+                                            <p><i class="bi bi-clock me-1 text-primary"></i> <strong>เปิด:</strong>
+                                                08:30-16:30 น. (หยุดจันทร์)</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>พิพิธภัณฑ์วิถีเจ้าเมือง</li>
+                                                <li>เรือนไม้สักโบราณ</li>
+                                                <li>สวนสวยรอบคุ้ม</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                20 บาท</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== หมวด: กิจกรรมผจญภัย ===== -->
+    <section id="activity" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold text-info mb-4"><i class="bi bi-bicycle"></i> กิจกรรมผจญภัย</h2>
+            <p class="text-center text-muted mb-5">กิจกรรมสนุกสนานท่ามกลางธรรมชาติภาคเหนือ</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body text-center">
+                            <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 70px; height: 70px;">
+                                <i class="bi bi-water display-6"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">ล่องแก่งแม่แตง</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงใหม่</p>
+                            <p class="card-text">ล่องแก่งผจญภัยระดับ 3-4 ในแม่น้ำแม่แตง ผ่านแก่งหิน น้ำตก
+                                ท่ามกลางป่าเขียวขจี</p>
+                            <span class="badge bg-info">กิจกรรม</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accA1">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dA1"><i
+                                                class="bi bi-info-circle me-2 text-info"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dA1" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-speedometer me-1 text-danger"></i>
+                                                <strong>ระดับ:</strong> ระดับ 3-4 (ปานกลาง-ท้าทาย)
+                                            </p>
+                                            <p><i class="bi bi-rulers me-1 text-primary"></i> <strong>ระยะทาง:</strong>
+                                                10 กม.</p>
+                                            <p><i class="bi bi-clock me-1 text-warning"></i> <strong>ใช้เวลา:</strong>
+                                                ประมาณ 1.5-2 ชม.</p>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ราคา:</strong>
+                                                เริ่มต้น 800-1,500 บาท/คน</p>
+                                            <p><i class="bi bi-calendar me-1 text-primary"></i>
+                                                <strong>ช่วงที่ดี:</strong> ก.ค. - พ.ย. (น้ำเยอะสนุก)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body text-center">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 70px; height: 70px;">
+                                <i class="bi bi-signpost-split display-6"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">เดินป่าเชียงดาว</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงใหม่</p>
+                            <p class="card-text">เดินป่าศึกษาธรรมชาติที่ดอยเชียงดาว ชมพันธุ์ไม้หายากและนกประจำถิ่น</p>
+                            <span class="badge bg-info">กิจกรรม</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accA2">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dA2"><i
+                                                class="bi bi-info-circle me-2 text-info"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dA2" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-mountain me-1 text-success"></i>
+                                                <strong>ความสูง:</strong> 2,275 เมตร (สูงอันดับ 3)
+                                            </p>
+                                            <p><i class="bi bi-clock me-1 text-warning"></i> <strong>ใช้เวลา:</strong>
+                                                เดินขึ้น 3-4 ชม.</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>เดินป่า UNESCO Biosphere Reserve</li>
+                                                <li>กางเต็นท์ชมดาว</li>
+                                                <li>ชมนกหายากกว่า 300 ชนิด</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้า:</strong>
+                                                100 บาท + ค่านำทาง 200 บาท/กลุ่ม</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body text-center">
+                            <div class="bg-warning text-dark rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 70px; height: 70px;">
+                                <i class="bi bi-balloon display-6"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">ซิปไลน์เชียงใหม่</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงใหม่</p>
+                            <p class="card-text">บินผ่านยอดไม้ด้วยซิปไลน์ความเร็วสูง ชมวิวป่าเขาจากมุมสูง</p>
+                            <span class="badge bg-info">กิจกรรม</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accA3">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dA3"><i
+                                                class="bi bi-info-circle me-2 text-info"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dA3" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-speedometer me-1 text-danger"></i>
+                                                <strong>จำนวนสถานี:</strong> 28-40 สถานี
+                                            </p>
+                                            <p><i class="bi bi-clock me-1 text-warning"></i> <strong>ใช้เวลา:</strong>
+                                                2-3 ชม.</p>
+                                            <p><i class="bi bi-people me-1 text-primary"></i> <strong>เหมาะกับ:</strong>
+                                                อายุ 4 ปีขึ้นไป น้ำหนัก 20-120 กก.</p>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ราคา:</strong>
+                                                1,500-3,000 บาท/คน</p>
+                                            <p><i class="bi bi-shield-check me-1 text-success"></i>
+                                                <strong>ความปลอดภัย:</strong> อุปกรณ์มาตรฐานสากล
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== หมวด: ตลาดและของฝาก ===== -->
+    <section id="market" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold text-danger mb-4"><i class="bi bi-shop"></i> ตลาดและของฝาก</h2>
+            <p class="text-center text-muted mb-5">ตลาดนัด ถนนคนเดิน และของฝากขึ้นชื่อจากภาคเหนือ</p>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body text-center">
+                            <div class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 70px; height: 70px;">
+                                <i class="bi bi-shop-window display-6"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">ถนนคนเดินท่าแพ</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงใหม่</p>
+                            <p class="card-text">ตลาดถนนคนเดินวันอาทิตย์ สินค้าหัตถกรรม อาหารเหนือ ของฝากมากมาย</p>
+                            <span class="badge bg-danger">ตลาด</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accM1">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dM1"><i
+                                                class="bi bi-info-circle me-2 text-danger"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dM1" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-clock me-1 text-primary"></i> <strong>เปิด:</strong>
+                                                ทุกวันอาทิตย์ 16:00-22:00 น.</p>
+                                            <p><i class="bi bi-geo-alt me-1 text-danger"></i> <strong>ที่ตั้ง:</strong>
+                                                ถนนท่าแพ ในคูเมืองเชียงใหม่</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>สินค้าหัตถกรรมล้านนา</li>
+                                                <li>อาหารเหนือ: ข้าวซอย ไส้อั่ว แคบหมู</li>
+                                                <li>การแสดงศิลปะพื้นบ้าน</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ฟรี</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body text-center">
+                            <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 70px; height: 70px;">
+                                <i class="bi bi-bag-heart display-6"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">ไนท์บาซาร์เชียงราย</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงราย</p>
+                            <p class="card-text">ตลาดกลางคืนใจกลางเมืองเชียงราย สินค้าชาวเขา งานฝีมือ ผ้าทอ</p>
+                            <span class="badge bg-danger">ตลาด</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accM2">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dM2"><i
+                                                class="bi bi-info-circle me-2 text-danger"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dM2" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-clock me-1 text-primary"></i> <strong>เปิด:</strong>
+                                                ทุกวัน 18:00-23:00 น.</p>
+                                            <p><i class="bi bi-geo-alt me-1 text-danger"></i> <strong>ที่ตั้ง:</strong>
+                                                ถนนพหลโยธิน ใจกลางเชียงราย</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>สินค้าชาวเขา ผ้าทอ เครื่องเงิน</li>
+                                                <li>อาหารพื้นเมืองเชียงราย</li>
+                                                <li>กาแฟดอยช้างและดอยตุง</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ฟรี</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow border-0">
+                        <div class="card-body text-center">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 70px; height: 70px;">
+                                <i class="bi bi-gift display-6"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">หมู่บ้านบ่อสร้าง</h5>
+                            <p class="text-muted small"><i class="bi bi-geo-alt"></i> จ.เชียงใหม่</p>
+                            <p class="card-text">แหล่งผลิตร่มบ่อสร้าง ชมการทำร่มกระดาษสาและหัตถกรรมล้านนา</p>
+                            <span class="badge bg-danger">ของฝาก</span>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accM3">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header"><button
+                                            class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#dM3"><i
+                                                class="bi bi-info-circle me-2 text-danger"></i>
+                                            <strong>ดูรายละเอียด</strong></button></h2>
+                                    <div id="dM3" class="accordion-collapse collapse">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-clock me-1 text-primary"></i> <strong>เปิด:</strong>
+                                                08:30-17:00 น.</p>
+                                            <p><i class="bi bi-brush me-1 text-warning"></i> <strong>กิจกรรม:</strong>
+                                                ชมสาธิตและทำร่มด้วยตนเอง</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul>
+                                                <li>ร่มกระดาษสาเขียนมือ</li>
+                                                <li>พัดไม้ไผ่ศิลปะล้านนา</li>
+                                                <li>เทศกาลร่มบ่อสร้าง (ม.ค.)</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ฟรี</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== หมวด: แยกตามจังหวัด ===== -->
+    <section class="py-5 bg-success text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3"><i class="bi bi-map-fill"></i> สถานที่ท่องเที่ยวแยกตามจังหวัด</h2>
+            <p class="lead">เลือกจังหวัดที่คุณสนใจเพื่อดูสถานที่ท่องเที่ยวเพิ่มเติม</p>
+        </div>
+    </section>
+
+    <!-- เชียงใหม่ -->
+    <section id="chiangmai" class="py-5">
+        <div class="container">
+            <h3 class="fw-bold text-success mb-4"><i class="bi bi-geo-fill"></i> จังหวัดเชียงใหม่</h3>
+            <p class="text-muted mb-4">เมืองหลวงแห่งล้านนา มีวัดกว่า 300 แห่ง อากาศเย็นสบาย เป็นจังหวัดท่องเที่ยวอันดับ
+                1 ของภาคเหนือ</p>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card border-start border-success border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">วัดพระธาตุดอยสุเทพ</h6>
+                            <p class="small text-muted mb-0">วัดศักดิ์สิทธิ์คู่บ้านคู่เมือง ตั้งอยู่บนดอยสุเทพ
+                                ชมวิวเมืองเชียงใหม่จากมุมสูง</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-success border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">ดอยอินทนนท์</h6>
+                            <p class="small text-muted mb-0">ยอดเขาสูงสุดของไทย ชมทะเลหมอก น้ำตก และพระมหาธาตุ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-success border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">อุทยานแห่งชาติดอยสุเทพ-ปุย</h6>
+                            <p class="small text-muted mb-0">แหล่งท่องเที่ยวธรรมชาติใกล้เมือง
+                                มีน้ำตกและหมู่บ้านชาวเขาม้ง</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-success border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">ถนนคนเดินท่าแพ</h6>
+                            <p class="small text-muted mb-0">ตลาดนัดกลางคืนขนาดใหญ่ สินค้าหัตถกรรม อาหารเหนือ
+                                ทุกวันอาทิตย์</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- เชียงราย -->
+    <section id="chiangrai" class="py-5 bg-light">
+        <div class="container">
+            <h3 class="fw-bold text-primary mb-4"><i class="bi bi-geo-fill"></i> จังหวัดเชียงราย</h3>
+            <p class="text-muted mb-4">เมืองเหนือสุดแดนสยาม เต็มไปด้วยวัดสวยงามและแหล่งท่องเที่ยวทางธรรมชาติ</p>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card border-start border-primary border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">วัดร่องขุ่น</h6>
+                            <p class="small text-muted mb-0">วัดสีขาวสวยงาม ผลงานของอาจารย์เฉลิมชัย โฆษิตพิพัฒน์</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-primary border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">ภูชี้ฟ้า</h6>
+                            <p class="small text-muted mb-0">จุดชมทะเลหมอกและพระอาทิตย์ขึ้นสุดอลังการ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-primary border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">ดอยตุง</h6>
+                            <p class="small text-muted mb-0">พระตำหนักดอยตุง สวนแม่ฟ้าหลวง ดอกไม้เมืองหนาวตลอดปี</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-primary border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">วัดร่องเสือเต้น</h6>
+                            <p class="small text-muted mb-0">วัดสีน้ำเงินอันโดดเด่น พุทธศิลป์ร่วมสมัยที่น่าทึ่ง</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ลำพูน -->
+    <section id="lamphun" class="py-5">
+        <div class="container">
+            <h3 class="fw-bold text-warning mb-4"><i class="bi bi-geo-fill"></i> จังหวัดลำพูน</h3>
+            <p class="text-muted mb-4">เมืองเก่าแก่กว่า 1,300 ปี อดีตราชธานีของอาณาจักรหริภุญไชย
+                ขึ้นชื่อเรื่องลำไยและวัดเก่า</p>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card border-start border-warning border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">วัดพระธาตุหริภุญชัย</h6>
+                            <p class="small text-muted mb-0">1 ใน 8 จอมเจดีย์ของไทย วัดคู่บ้านคู่เมืองลำพูน อายุกว่า
+                                1,000 ปี</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-warning border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">วัดจามเทวี</h6>
+                            <p class="small text-muted mb-0">เจดีย์สี่เหลี่ยมแบบทวารวดี มีพระพุทธรูปยืนประดับโดยรอบ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ลำปาง -->
+    <section id="lampang" class="py-5 bg-light">
+        <div class="container">
+            <h3 class="fw-bold text-danger mb-4"><i class="bi bi-geo-fill"></i> จังหวัดลำปาง</h3>
+            <p class="text-muted mb-4">เมืองรถม้า มีวัดเก่าแก่สวยงาม ศูนย์อนุรักษ์ช้างไทย และชามตราไก่อันเลื่องชื่อ</p>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card border-start border-danger border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">วัดพระธาตุลำปางหลวง</h6>
+                            <p class="small text-muted mb-0">วัดเก่าแก่อายุกว่า 1,000 ปี
+                                สถาปัตยกรรมล้านนาที่สมบูรณ์ที่สุด</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-danger border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">ศูนย์อนุรักษ์ช้างไทย</h6>
+                            <p class="small text-muted mb-0">ชมการแสดงช้าง อาบน้ำช้าง เรียนรู้วิถีชีวิตควาญช้าง</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- แพร่ -->
+    <section id="phrae" class="py-5">
+        <div class="container">
+            <h3 class="fw-bold text-info mb-4"><i class="bi bi-geo-fill"></i> จังหวัดแพร่</h3>
+            <p class="text-muted mb-4">เมืองเก่าแห่งไม้สัก อุดมไปด้วยสถาปัตยกรรมไม้และวัฒนธรรมล้านนาตะวันออก</p>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card border-start border-info border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">คุ้มเจ้าหลวง</h6>
+                            <p class="small text-muted mb-0">คุ้มสถาปัตยกรรมไทยผสมยุโรป สร้างในสมัยรัชกาลที่ 5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-info border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">แพะเมืองผี</h6>
+                            <p class="small text-muted mb-0">เสาดินปลายแหลมรูปทรงประหลาด เกิดจากการกัดเซาะทางธรรมชาติ
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- น่าน -->
+    <section id="nan" class="py-5 bg-light">
+        <div class="container">
+            <h3 class="fw-bold text-secondary mb-4"><i class="bi bi-geo-fill"></i> จังหวัดน่าน</h3>
+            <p class="text-muted mb-4">เมืองเงียบสงบที่ซ่อนตัวในหุบเขา มีวัฒนธรรมเฉพาะตัวและธรรมชาติสวยงาม</p>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card border-start border-secondary border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">วัดภูมินทร์</h6>
+                            <p class="small text-muted mb-0">ภาพ "ปู่ม่าน ย่าม่าน กระซิบรัก" จิตรกรรมฝาผนังอันโด่งดัง
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-secondary border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">ดอยภูคา</h6>
+                            <p class="small text-muted mb-0">บ้านของต้นชมพูภูคา ดอกไม้หายากที่พบเฉพาะที่นี่</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- พะเยา -->
+    <section id="phayao" class="py-5">
+        <div class="container">
+            <h3 class="fw-bold text-success mb-4"><i class="bi bi-geo-fill"></i> จังหวัดพะเยา</h3>
+            <p class="text-muted mb-4">เมืองแห่งกว๊านพะเยา ทะเลสาบน้ำจืดที่สวยงาม เมืองเล็กๆ ที่น่าอยู่</p>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card border-start border-success border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">กว๊านพะเยา</h6>
+                            <p class="small text-muted mb-0">ทะเลสาบน้ำจืดขนาดใหญ่ จุดชมพระอาทิตย์ตกที่สวยงาม</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-success border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">วัดติโลกอาราม</h6>
+                            <p class="small text-muted mb-0">วัดกลางน้ำกว๊านพะเยา มีพระพุทธรูปและซากโบราณสถาน</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- แม่ฮ่องสอน -->
+    <section id="maehongson" class="py-5 bg-light">
+        <div class="container">
+            <h3 class="fw-bold text-primary mb-4"><i class="bi bi-geo-fill"></i> จังหวัดแม่ฮ่องสอน</h3>
+            <p class="text-muted mb-4">เมืองสามหมอก ธรรมชาติงดงาม วัฒนธรรมไทใหญ่ และเมืองปายอันโรแมนติก</p>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card border-start border-primary border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">ปาย</h6>
+                            <p class="small text-muted mb-0">เมืองเล็กน่ารัก สะพานประวัติศาสตร์ปาย หมู่บ้านจีนยูนนาน</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-primary border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">ถ้ำลอด</h6>
+                            <p class="small text-muted mb-0">ถ้ำขนาดใหญ่มีลำน้ำไหลผ่าน ล่องแพชมหินงอกหินย้อย</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- อุตรดิตถ์ -->
+    <section id="uttaradit" class="py-5">
+        <div class="container">
+            <h3 class="fw-bold text-warning mb-4"><i class="bi bi-geo-fill"></i> จังหวัดอุตรดิตถ์</h3>
+            <p class="text-muted mb-4">เมืองลับแล ดินแดนทุเรียนหลง ประตูสู่ภาคเหนือตอนล่าง</p>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="card border-start border-warning border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">เขื่อนสิริกิติ์</h6>
+                            <p class="small text-muted mb-0">เขื่อนดินที่ใหญ่ที่สุดในไทย ชมทิวทัศน์ทะเลสาบและภูเขา</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card border-start border-warning border-4 shadow-sm">
+                        <div class="card-body">
+                            <h6 class="fw-bold">ทุ่งดอกเสี้ยวบ้านน้ำพี้</h6>
+                            <p class="small text-muted mb-0">ทุ่งดอกไม้ขาวบานสะพรั่งในช่วงเดือนกุมภาพันธ์-มีนาคม</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 ท่องเที่ยวภาคเหนือ. สงวนลิขสิทธิ์.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

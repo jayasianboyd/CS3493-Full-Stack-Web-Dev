@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 8-1 | JavaScript Front-End #1-1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.15);
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            color: #fbbf24;
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+            font-family: monospace;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #fbbf24, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #f97316);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+            border-color: rgba(251, 191, 36, 0.3);
+            background: #25334b;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(251, 191, 36, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fbbf24;
+            margin-bottom: 16px;
+        }
+
+        .topic {
+            font-size: 0.85rem;
+            color: #fbbf24;
+            font-family: monospace;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #f8fafc;
+            margin-bottom: 8px;
+        }
+
+        .desc {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .file-name {
+            margin-top: auto;
+            padding-top: 16px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: #fbbf24;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="badge">Assignment 08-1</div>
+            <h1>JavaScript Front-End #1-1</h1>
+            <p>รวมแบบฝึกหัดพื้นฐาน JavaScript (Inline, Internal และ External Files)</p>
+        </header>
+
+        <div class="grid">
+            <!-- Inline -->
+            <a href="Inline.html" class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <line x1="10" y1="9" x2="8" y2="9" />
+                    </svg>
+                </div>
+                <div class="topic">Basic 01</div>
+                <div class="title">Inline JavaScript</div>
+                <div class="desc">การเขียน JavaScript ลงในแท็ก HTML โดยตรงผ่าน attribute</div>
+                <div class="file-name">▶ Inline.html</div>
+            </a>
+
+            <!-- Internal -->
+            <a href="Internal.html" class="card">
+                <div class="card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2-2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <path d="m10 13-2 2 2 2" />
+                        <path d="m14 17 2-2-2-2" />
+                    </svg>
+                </div>
+                <div class="topic">Basic 02</div>
+                <div class="title">Internal JavaScript</div>
+                <div class="desc">การเขียน JavaScript ในแท็ก &lt;script&gt; ภายในหน้า HTML</div>
+                <div class="file-name">▶ Internal.html</div>
+            </a>
+
+            <!-- index 1 -->
+            <a href="index1.html" class="card">
+                <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg></div>
+                <div class="topic">External JS 01</div>
+                <div class="title">ข้อ 01 (main1.js)</div>
+                <div class="desc">กดปุ่มแสดงข้อความแจ้งเตือน (Alert / DOM)</div>
+                <div class="file-name">▶ index1.html</div>
+            </a>
+
+            <!-- index 2 -->
+            <a href="index2.html" class="card">
+                <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg></div>
+                <div class="topic">External JS 02</div>
+                <div class="title">ข้อ 02 (main2.js)</div>
+                <div class="desc">การผูก Event เพื่อจัดการองค์ประกอบของหน้าเว็บ</div>
+                <div class="file-name">▶ index2.html</div>
+            </a>
+
+            <!-- index 3 -->
+            <a href="index3.html" class="card">
+                <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg></div>
+                <div class="topic">External JS 03</div>
+                <div class="title">ข้อ 03 (main3.js)</div>
+                <div class="desc">ความแตกต่างของตัวแปร var และ let (Global vs Block Scope)</div>
+                <div class="file-name">▶ index3.html</div>
+            </a>
+
+            <!-- index 4 -->
+            <a href="index4.html" class="card">
+                <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg></div>
+                <div class="topic">External JS 04</div>
+                <div class="title">ข้อ 04 (main4.js)</div>
+                <div class="desc">การใช้ค่าคงที่ const และการล็อกข้อมูล Object ด้วย Object.freeze</div>
+                <div class="file-name">▶ index4.html</div>
+            </a>
+
+            <!-- index 5 -->
+            <a href="index5.html" class="card">
+                <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg></div>
+                <div class="topic">External JS 05</div>
+                <div class="title">ข้อ 05 (main5.js)</div>
+                <div class="desc">การสร้างฟังก์ชัน (Function) แบบปกติ และแบบ Arrow Function</div>
+                <div class="file-name">▶ index5.html</div>
+            </a>
+
+            <!-- index 6 -->
+            <a href="index6.html" class="card">
+                <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg></div>
+                <div class="topic">External JS 06</div>
+                <div class="title">ข้อ 06 (main6.js)</div>
+                <div class="desc">การกำหนดค่าพารามิเตอร์แบบเริ่มต้น (Default Parameters)</div>
+                <div class="file-name">▶ index6.html</div>
+            </a>
+
+            <!-- index 7 -->
+            <a href="index7.html" class="card">
+                <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg></div>
+                <div class="topic">External JS 07</div>
+                <div class="title">ข้อ 07 (main7.js)</div>
+                <div class="desc">การต่อข้อความแบบ Template Literals ด้วย Backtick (``)</div>
+                <div class="file-name">▶ index7.html</div>
+            </a>
+
+            <!-- index 8 -->
+            <a href="index8.html" class="card">
+                <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg></div>
+                <div class="topic">External JS 08</div>
+                <div class="title">ข้อ 08 (main8.js)</div>
+                <div class="desc">พารามิเตอร์รับหลายค่า (Rest Parameters) แปลงเป็น Array</div>
+                <div class="file-name">▶ index8.html</div>
+            </a>
+
+            <!-- index 9 -->
+            <a href="index9.html" class="card">
+                <div class="card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg></div>
+                <div class="topic">External JS 09</div>
+                <div class="title">ข้อ 09 (main9.js)</div>
+                <div class="desc">การใช้ JavaScript สร้างและแทรก Element สู่หน้าเว็บ (DOM)</div>
+                <div class="file-name">▶ index9.html</div>
+            </a>
+
+        </div>
+
+        <footer>
+            CS3493 Full Stack Web Development &nbsp;|&nbsp; Student ID: <span>661568</span> &nbsp;|&nbsp; Assignment 8-1
+        </footer>
+    </div>
+
+</body>
+
+</html>

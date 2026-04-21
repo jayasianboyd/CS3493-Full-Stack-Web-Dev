@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ท่องเที่ยวภาคเหนือ - Northern Thailand Tourism</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-tree"></i> ท่องเที่ยวภาคเหนือ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house"></i> หน้าหลัก
+                        </a>
+                    </li>
+                    <!-- Dropdown: สถานที่ท่องเที่ยว -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-geo-alt"></i> สถานที่ท่องเที่ยว
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="attractions.html">
+                                    <i class="bi bi-list-ul me-2"></i>ทั้งหมด
+                                </a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="attractions.html#nature">
+                                    <i class="bi bi-tree me-2 text-success"></i>ธรรมชาติและภูเขา
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#temple">
+                                    <i class="bi bi-building me-2 text-warning"></i>วัดและวัฒนธรรม
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#activity">
+                                    <i class="bi bi-bicycle me-2 text-info"></i>กิจกรรมผจญภัย
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#market">
+                                    <i class="bi bi-shop me-2 text-danger"></i>ตลาดและของฝาก
+                                </a></li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown: จังหวัด -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-map"></i> จังหวัด
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="attractions.html#chiangmai">
+                                    <i class="bi bi-geo-fill me-2 text-success"></i>เชียงใหม่
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#chiangrai">
+                                    <i class="bi bi-geo-fill me-2 text-primary"></i>เชียงราย
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#lamphun">
+                                    <i class="bi bi-geo-fill me-2 text-warning"></i>ลำพูน
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#lampang">
+                                    <i class="bi bi-geo-fill me-2 text-danger"></i>ลำปาง
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#phrae">
+                                    <i class="bi bi-geo-fill me-2 text-info"></i>แพร่
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#nan">
+                                    <i class="bi bi-geo-fill me-2 text-secondary"></i>น่าน
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#phayao">
+                                    <i class="bi bi-geo-fill me-2 text-success"></i>พะเยา
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#maehongson">
+                                    <i class="bi bi-geo-fill me-2 text-primary"></i>แม่ฮ่องสอน
+                                </a></li>
+                            <li><a class="dropdown-item" href="attractions.html#uttaradit">
+                                    <i class="bi bi-geo-fill me-2 text-warning"></i>อุตรดิตถ์
+                                </a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="accommodation.html">
+                            <i class="bi bi-building"></i> ที่พักและอาหาร
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope"></i> ติดต่อเรา
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="position-relative" style="height: 500px;">
+                    <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=1600"
+                        class="d-block w-100 h-100" style="object-fit: cover;" alt="ภาคเหนือ">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                        style="background: rgba(0,0,0,0.4);">
+                        <div class="text-center text-white">
+                            <h1 class="display-3 fw-bold">ยินดีต้อนรับสู่ภาคเหนือ</h1>
+                            <p class="lead">สัมผัสธรรมชาติ วัฒนธรรม และความงดงามของล้านนา</p>
+                            <a href="attractions.html" class="btn btn-light btn-lg mt-3">
+                                <i class="bi bi-arrow-right-circle"></i> เริ่มต้นการท่องเที่ยว
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="position-relative" style="height: 500px;">
+                    <img src="images/วัดและวัฒนธรรม.jpg" class="d-block w-100 h-100" style="object-fit: cover;"
+                        alt="วัด">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                        style="background: rgba(0,0,0,0.4);">
+                        <div class="text-center text-white">
+                            <h1 class="display-3 fw-bold">วัดและวัฒนธรรม</h1>
+                            <p class="lead">สถาปัตยกรรมล้านนาที่งดงามและเป็นเอกลักษณ์</p>
+                            <a href="attractions.html" class="btn btn-warning btn-lg mt-3">
+                                <i class="bi bi-building"></i> ดูสถานที่ทั้งหมด
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="position-relative" style="height: 500px;">
+                    <img src="images/ธรรมชาติสวยงาม.jpg" class="d-block w-100 h-100" style="object-fit: cover;"
+                        alt="ธรรมชาติ">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+                        style="background: rgba(0,0,0,0.4);">
+                        <div class="text-center text-white">
+                            <h1 class="display-3 fw-bold">ธรรมชาติสวยงาม</h1>
+                            <p class="lead">ภูเขา น้ำตก และทะเลหมอกที่น่าหลงใหล</p>
+                            <a href="attractions.html" class="btn btn-info btn-lg mt-3">
+                                <i class="bi bi-camera"></i> ชมภาพถ่าย
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- About Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="images/เกี่ยวกับภาคเหนือ.png" class="img-fluid rounded shadow"
+                        style="height: 350px; width: 100%; object-fit: cover;" alt="ภาคเหนือประเทศไทย">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold text-success mb-4">
+                        <i class="bi bi-info-circle"></i> เกี่ยวกับภาคเหนือ
+                    </h2>
+                    <p class="lead">
+                        ภาคเหนือของประเทศไทยเป็นดินแดนแห่งขุนเขา วัฒนธรรมล้านนาอันเก่าแก่
+                        และธรรมชาติที่สวยงาม ประกอบด้วย 9 จังหวัด ได้แก่ เชียงใหม่ เชียงราย
+                        ลำพูน ลำปาง แพร่ น่าน พะเยา แม่ฮ่องสอน และอุตรดิตถ์
+                    </p>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item bg-transparent">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            อากาศเย็นสบายตลอดทั้งปี
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            วัฒนธรรมล้านนาที่เป็นเอกลักษณ์
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            อาหารเหนือรสชาติดั้งเดิม
+                        </li>
+                        <li class="list-group-item bg-transparent">
+                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                            สถานที่ท่องเที่ยวหลากหลาย
+                        </li>
+                    </ul>
+                    <a href="attractions.html" class="btn btn-success btn-lg">
+                        <i class="bi bi-arrow-right"></i> ดูสถานที่ท่องเที่ยว
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold text-success mb-5">
+                <i class="bi bi-star-fill"></i> จุดหมายยอดนิยม
+            </h2>
+            <div class="row g-4">
+                <!-- Card 1: ดอยอินทนนท์ -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="images/ดอยอินทนนท์.jpg" class="card-img-top" style="height: 200px; object-fit: cover;"
+                            alt="ดอยอินทนนท์">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">ดอยอินทนนท์</h5>
+                            <p class="card-text text-muted">
+                                ยอดเขาสูงสุดของประเทศไทย ตั้งอยู่ที่จังหวัดเชียงใหม่ มีทะเลหมอกและอากาศหนาวเย็นตลอดปี
+                            </p>
+                            <span class="badge bg-success"><i class="bi bi-geo-alt"></i> เชียงใหม่</span>
+                            <span class="badge bg-secondary"><i class="bi bi-tag"></i> ธรรมชาติ</span>
+                        </div>
+                        <!-- Accordion รายละเอียด -->
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accordionDoi">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#detailDoi" aria-expanded="false">
+                                            <i class="bi bi-info-circle me-2 text-success"></i>
+                                            <strong>ดูรายละเอียดเพิ่มเติม</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="detailDoi" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionDoi">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-mountain me-1 text-success"></i>
+                                                <strong>ความสูง:</strong> 2,565 เมตรจากระดับน้ำทะเล</p>
+                                            <p><i class="bi bi-calendar-event me-1 text-primary"></i>
+                                                <strong>ช่วงเวลาที่ดีที่สุด:</strong> พฤศจิกายน - กุมภาพันธ์</p>
+                                            <p><i class="bi bi-thermometer-snow me-1 text-info"></i>
+                                                <strong>อุณหภูมิ:</strong> 5-15°C ในฤดูหนาว</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul class="mb-2">
+                                                <li>พระมหาธาตุนภเมทนีดล-นภพลภูมิสิริ</li>
+                                                <li>น้ำตกวชิรธาร น้ำตกแม่กลาง</li>
+                                                <li>ทะเลหมอกยามเช้า</li>
+                                                <li>เส้นทางศึกษาธรรมชาติกิ่วแม่ปาน</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ผู้ใหญ่ 300 บาท / เด็ก 150 บาท</p>
+                                            <a href="attractions.html#chiangmai"
+                                                class="btn btn-success btn-sm w-100 mt-2">
+                                                <i class="bi bi-arrow-right-circle"></i> ไปหน้าสถานที่ท่องเที่ยว
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2: วัดร่องขุ่น -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="images/วัดร่องขุ่น.jpg" class="card-img-top" style="height: 200px; object-fit: cover;"
+                            alt="วัดร่องขุ่น">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">วัดร่องขุ่น</h5>
+                            <p class="card-text text-muted">
+                                วัดสีขาวที่สวยงามเป็นเอกลักษณ์ ออกแบบโดยอาจารย์เฉลิมชัย โฆษิตพิพัฒน์
+                            </p>
+                            <span class="badge bg-warning text-dark"><i class="bi bi-geo-alt"></i> เชียงราย</span>
+                            <span class="badge bg-secondary"><i class="bi bi-tag"></i> วัฒนธรรม</span>
+                        </div>
+                        <!-- Accordion รายละเอียด -->
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accordionWat">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#detailWat" aria-expanded="false">
+                                            <i class="bi bi-info-circle me-2 text-warning"></i>
+                                            <strong>ดูรายละเอียดเพิ่มเติม</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="detailWat" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionWat">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-person me-1 text-warning"></i>
+                                                <strong>ผู้ออกแบบ:</strong> อาจารย์เฉลิมชัย โฆษิตพิพัฒน์</p>
+                                            <p><i class="bi bi-calendar-event me-1 text-primary"></i>
+                                                <strong>เปิดให้เข้าชม:</strong> ทุกวัน 08:00-17:00 น.</p>
+                                            <p><i class="bi bi-palette me-1 text-danger"></i> <strong>สไตล์:</strong>
+                                                พุทธศิลป์ร่วมสมัย สีขาวบริสุทธิ์</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul class="mb-2">
+                                                <li>อุโบสถสีขาวสง่างาม</li>
+                                                <li>สะพานวงจรสังสารวัฏ</li>
+                                                <li>จิตรกรรมฝาผนังภายในอุโบสถ</li>
+                                                <li>หอพระไตรปิฎกสีทอง</li>
+                                            </ul>
+                                            <p><i class="bi bi-cash me-1 text-success"></i> <strong>ค่าเข้าชม:</strong>
+                                                ชาวไทย ฟรี / ชาวต่างชาติ 100 บาท</p>
+                                            <a href="attractions.html#chiangrai"
+                                                class="btn btn-warning btn-sm w-100 mt-2">
+                                                <i class="bi bi-arrow-right-circle"></i> ไปหน้าสถานที่ท่องเที่ยว
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3: ปาย -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="images/ปาย.jpg" class="card-img-top" style="height: 200px; object-fit: cover;"
+                            alt="ปาย">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">ปาย</h5>
+                            <p class="card-text text-muted">
+                                เมืองเล็กๆ ท่ามกลางหุบเขา มีบรรยากาศโรแมนติก เหมาะสำหรับการพักผ่อน
+                            </p>
+                            <span class="badge bg-info"><i class="bi bi-geo-alt"></i> แม่ฮ่องสอน</span>
+                            <span class="badge bg-secondary"><i class="bi bi-tag"></i> เมือง</span>
+                        </div>
+                        <!-- Accordion รายละเอียด -->
+                        <div class="card-footer bg-transparent border-0 p-0">
+                            <div class="accordion" id="accordionPai">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed bg-light rounded-0" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#detailPai" aria-expanded="false">
+                                            <i class="bi bi-info-circle me-2 text-info"></i>
+                                            <strong>ดูรายละเอียดเพิ่มเติม</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="detailPai" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionPai">
+                                        <div class="accordion-body small">
+                                            <p><i class="bi bi-signpost me-1 text-info"></i> <strong>ระยะทาง:</strong>
+                                                ห่างจากตัวเมืองเชียงใหม่ 135 กม. (762 โค้ง)</p>
+                                            <p><i class="bi bi-calendar-event me-1 text-primary"></i>
+                                                <strong>ช่วงเวลาที่ดีที่สุด:</strong> พฤศจิกายน - กุมภาพันธ์</p>
+                                            <p><i class="bi bi-thermometer-snow me-1 text-info"></i>
+                                                <strong>อุณหภูมิ:</strong> 10-20°C ในฤดูหนาว</p>
+                                            <p><i class="bi bi-eye me-1 text-warning"></i> <strong>ไฮไลท์:</strong></p>
+                                            <ul class="mb-2">
+                                                <li>สะพานประวัติศาสตร์ปาย</li>
+                                                <li>หมู่บ้านจีนยูนนาน (สันติชน)</li>
+                                                <li>จุดชมวิวหยุนไหล</li>
+                                                <li>น้ำพุร้อนท่าปาย - แช่น้ำร้อนธรรมชาติ</li>
+                                                <li>ถนนคนเดินปาย</li>
+                                            </ul>
+                                            <p><i class="bi bi-cup-hot me-1 text-danger"></i>
+                                                <strong>อาหารแนะนำ:</strong> ข้าวซอย, ชาจีนยูนนาน, ขนมจีนน้ำเงี้ยว</p>
+                                            <a href="attractions.html#maehongson"
+                                                class="btn btn-info btn-sm w-100 mt-2 text-white">
+                                                <i class="bi bi-arrow-right-circle"></i> ไปหน้าสถานที่ท่องเที่ยว
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Section -->
+    <section class="py-5 bg-success text-white">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-3">
+                    <i class="bi bi-geo-alt-fill display-3"></i>
+                    <h3 class="mt-3">9</h3>
+                    <p>จังหวัด</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-building display-3"></i>
+                    <h3 class="mt-3">100+</h3>
+                    <p>สถานที่ท่องเที่ยว</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-house-heart display-3"></i>
+                    <h3 class="mt-3">500+</h3>
+                    <p>ที่พัก</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-people-fill display-3"></i>
+                    <h3 class="mt-3">1M+</h3>
+                    <p>นักท่องเที่ยว/ปี</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Tips -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold text-success mb-5">
+                <i class="bi bi-lightbulb"></i> เคล็ดลับการเดินทาง
+            </h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card text-center h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="bi bi-calendar3 display-5"></i>
+                            </div>
+                            <h5 class="card-title">ช่วงเวลาที่ดีที่สุด</h5>
+                            <p class="card-text text-muted">
+                                พฤศจิกายน - กุมภาพันธ์ อากาศเย็นสบาย เหมาะแก่การท่องเที่ยว
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card text-center h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="bg-warning text-dark rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="bi bi-luggage display-5"></i>
+                            </div>
+                            <h5 class="card-title">สิ่งที่ต้องเตรียม</h5>
+                            <p class="card-text text-muted">
+                                เสื้อกันหนาว ครีมกันแดด และรองเท้าสำหรับเดินป่า
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card text-center h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="bi bi-car-front display-5"></i>
+                            </div>
+                            <h5 class="card-title">การเดินทาง</h5>
+                            <p class="card-text text-muted">
+                                แนะนำเช่ารถขับเอง หรือใช้บริการรถโดยสารประจำทาง
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card text-center h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <div class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                style="width: 80px; height: 80px;">
+                                <i class="bi bi-exclamation-triangle display-5"></i>
+                            </div>
+                            <h5 class="card-title">ข้อควรระวัง</h5>
+                            <p class="card-text text-muted">
+                                ระวังถนนลาดชันและโค้งหักศอกในเส้นทางบนภูเขา
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-tree"></i> ท่องเที่ยวภาคเหนือ
+                    </h5>
+                    <p class="text-muted">
+                        เว็บไซต์แนะนำสถานที่ท่องเที่ยวภาคเหนือของประเทศไทย
+                        พร้อมข้อมูลที่พัก อาหาร และเส้นทางการเดินทาง
+                    </p>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">ลิงก์ด่วน</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">หน้าหลัก</a></li>
+                        <li class="mb-2"><a href="attractions.html"
+                                class="text-muted text-decoration-none">สถานที่ท่องเที่ยว</a></li>
+                        <li class="mb-2"><a href="accommodation.html"
+                                class="text-muted text-decoration-none">ที่พักและอาหาร</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">ติดต่อเรา</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">ติดต่อ</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> เชียงใหม่ ประเทศไทย</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> 053-123-456</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@northerntourism.th</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">ติดตามเรา</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="btn btn-outline-light btn-sm">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center text-muted">
+                <p class="mb-0">&copy; 2026 ท่องเที่ยวภาคเหนือ. สงวนลิขสิทธิ์.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

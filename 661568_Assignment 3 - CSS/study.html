@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ประวัติการศึกษา</title>
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            background-color: #eaf4fb;
+            font-family: 'TH Sarabun New', Sarabun, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        /* HEADER */
+        #header-section {
+            background-color: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 16px 20px;
+        }
+
+        #header-section h1 {
+            margin: 0;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 34px;
+            text-shadow: 2px 2px 0px #1E90FF;
+        }
+
+        /* MENU */
+        #menu-section {
+            background-color: #2e86ab;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        #menu-section > span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #cceeff;
+            margin-right: 8px;
+        }
+
+        .menu-link {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 5px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .menu-link:hover {
+            background-color: #1E90FF;
+        }
+
+        /* CONTENT */
+        #content-section {
+            max-width: 860px;
+            margin: 30px auto;
+            padding: 0 20px 40px;
+        }
+
+        /* TABLE */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        th {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 12px 18px;
+            text-align: center;
+            font-size: 18px;
+            border-bottom: 2px solid #2e86ab;
+        }
+
+        td {
+            padding: 10px 18px;
+            border-bottom: 1px solid #e8e8e8;
+            vertical-align: middle;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:nth-child(even) td {
+            background-color: #f0f8ff;
+        }
+
+        tbody tr:hover td {
+            background-color: #dceefb;
+            transition: background-color 0.15s;
+        }
+
+        .col-level {
+            width: 18%;
+            font-weight: bold;
+            color: #1a1a2e;
+            text-align: center;
+        }
+
+        .col-name {
+            width: 50%;
+        }
+
+        .col-logo {
+            width: 32%;
+            text-align: center;
+        }
+
+        .col-logo img {
+            height: 110px;
+            width: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        /* MARQUEE */
+        #marquee-container {
+            margin-top: 24px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px 0 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+
+        #marquee-container > span {
+            display: block;
+            font-size: 13px;
+            color: #aaa;
+            padding-left: 14px;
+            margin-bottom: 6px;
+        }
+
+        /* FOOTER */
+        #footer-section {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        address {
+            font-size: 17px;
+            font-style: normal;
+            color: #c9b8ff;
+            margin: 0;
+        }
+
+        .footer-tag {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .filename-label {
+            font-size: 16px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header-section">
+        <h1>&lt;div&gt; ประวัติการศึกษา</h1>
+    </div>
+
+    <!-- MENU -->
+    <div id="menu-section">
+        <span>&lt;div&gt;</span>
+        <a href="home.html" class="menu-link">HOME</a>
+        <a href="study.html" class="menu-link">STUDY</a>
+        <a href="viewBuild/album/index1.html" class="menu-link">GALLERY</a>
+        <a href="webvideo.html" class="menu-link">VIDEO</a>
+        <a href="mywebsite.html" class="menu-link">CONTACT</a>
+    </div>
+
+    <!-- CONTENT -->
+    <div id="content-section">
+
+        <!-- ตารางการศึกษา -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ระดับการศึกษา</th>
+                    <th>ชื่อสถาบัน</th>
+                    <th>สัญลักษณ์</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-level">มัธยมต้น</td>
+                    <td class="col-name">โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์</td>
+                    <td class="col-logo"><img src="picture/bb.png" alt="bb"></td>
+                </tr>
+                <tr>
+                    <td class="col-level">มัธยมปลาย</td>
+                    <td class="col-name">โรงเรียนบ้านบึง อุตสาหกรรมนุเคราะห์</td>
+                    <td class="col-logo"><img src="picture/bb.png" alt="bb"></td>
+                </tr>
+                <tr>
+                    <td class="col-level">อุดมศึกษา</td>
+                    <td class="col-name">มหาวิทยาลัยหัวเฉียวเฉลิมพระเกียรติ</td>
+                    <td class="col-logo"><img src="picture/hcu.png" alt="hcu"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Marquee -->
+        <div id="marquee-container">
+            <span>&lt;marquee&gt;</span>
+            <marquee scrollamount="8">
+                <img src="picture/p_a1.gif" height="90">
+                <img src="picture/p_a1.gif" height="90">
+                <img src="picture/p_a1.gif" height="90">
+            </marquee>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer-section">
+        <div>
+            <div class="footer-tag">&lt;address&gt;</div>
+            <address>
+                written by <span style="text-decoration: underline;">Peeratut Waritum</span><br>
+                Visit us at : cs.hcu.ac.th
+            </address>
+        </div>
+        <div class="filename-label">661568study.html</div>
+    </div>
+
+</body>
+
+</html>

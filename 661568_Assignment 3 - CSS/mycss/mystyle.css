@@ -1,0 +1,94 @@
+/* กำหนดพื้นหลังหลักของหน้าเว็บ */
+body {
+    background-color: #ADD8E6; /* สีฟ้าอ่อน (LightBlue) */
+    font-family: 'TH Sarabun New', sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+
+/* --- ส่วน Header (สีดำด้านบน) --- */
+#header-section {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+#header-section h1 {
+    margin: 0;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* --- ส่วน Marquee (แถบสีฟ้าเข้ม) --- */
+#marquee-section {
+    background-color: #6dacd6; /* สีฟ้ากลางๆ */
+    padding: 10px;
+    margin-top: 5px;
+    display: flex; /* จัดให้คำว่า <div> กับ ตัววิ่ง อยู่บรรทัดเดียวกัน */
+    align-items: center;
+    border: 1px solid #555;
+}
+
+marquee {
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* --- ส่วน Content (แถบสีเขียว) --- */
+#content-section {
+    background-color: #9ACD32; /* สีเขียว (YellowGreen) */
+    padding: 20px;
+    margin-top: 5px;
+    border: 1px solid #555;
+    min-height: 200px;
+}
+
+/* คำว่า <div> ด้านซ้าย */
+.tag-label-block {
+    float: left;
+    font-size: 24px;
+    width: 50px;
+}
+
+/* เนื้อหาข้อมูลส่วนตัว */
+.info-content {
+    margin-left: 100px; /* เว้นระยะห่างจากด้านซ้าย */
+}
+
+.info-content p {
+    font-size: 20px;
+    margin: 10px 0;
+    color: black;
+}
+
+/* --- ส่วน Footer (ด้านล่าง) --- */
+#footer-section {
+    position: relative;
+    padding-top: 20px;
+    height: 100px;
+}
+
+address {
+    font-size: 20px;
+    font-style: normal;
+    color: black;
+}
+
+.purple-text {
+    color: #800080; /* สีม่วง */
+}
+
+.tag-label {
+    font-size: 20px;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.filename-label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 24px;
+    font-family: sans-serif;
+}

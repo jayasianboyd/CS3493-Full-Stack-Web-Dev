@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์มรับสมัครงานฉบับสมบูรณ์ - Bootstrap 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            background-color: #f0f2f5;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .form-section-title {
+            border-left: 5px solid #0d6efd;
+            padding-left: 10px;
+            margin-bottom: 20px;
+            color: #495057;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-primary text-white p-4">
+                        <h3 class="mb-0"><i class="bi bi-person-lines-fill me-2"></i>แบบฟอร์ม</h3>
+                    </div>
+
+                    <div class="card-body p-4 p-md-5">
+                        <form action="#" method="POST">
+
+                            <div class="form-section-title">1. ข้อมูลส่วนตัว</div>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="fName" placeholder="ชื่อ" required>
+                                        <label for="fName">ชื่อ (First Name)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="lName" placeholder="นามสกุล"
+                                            required>
+                                        <label for="lName">นามสกุล (Last Name)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="bDate" required>
+                                        <label for="bDate">วัน/เดือน/ปีเกิด</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 d-flex align-items-center">
+                                    <div class="ms-2">
+                                        <label class="form-label d-block text-muted small mb-1">เพศ (Gender)</label>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="genderM"
+                                                value="male">
+                                            <label class="form-check-label" for="genderM">ชาย</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="genderF"
+                                                value="female">
+                                            <label class="form-check-label" for="genderF">หญิง</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="genderO"
+                                                value="other">
+                                            <label class="form-check-label" for="genderO">อื่นๆ</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section-title">2. ข้อมูลการติดต่อ</div>
+                            <div class="row g-3 mb-4">
+
+                                <div class="col-md-7">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                        <div class="form-floating flex-grow-1">
+                                            <input type="email" class="form-control" id="email" placeholder="Email"
+                                                required>
+                                            <label for="email">อีเมลติดต่อ (Email)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                                        <div class="form-floating flex-grow-1">
+                                            <input type="tel" class="form-control" id="phone" placeholder="Phone"
+                                                oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+                                            <label for="phone">เบอร์โทรศัพท์</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label text-muted small mb-1">ลิงก์แฟ้มผลงาน / LinkedIn</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light">https://</span>
+                                        <input type="text" class="form-control" placeholder="www.yourportfolio.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section-title">3. ข้อมูลวิชาชีพและความสามารถ</div>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label for="edu" class="form-label">ระดับการศึกษาสูงสุด</label>
+                                    <select class="form-select" id="edu">
+                                        <option selected disabled>เลือกวุฒิการศึกษา...</option>
+                                        <option value="1">มัธยมศึกษาตอนปลาย / ปวช.</option>
+                                        <option value="2">ปวส. / อนุปริญญา</option>
+                                        <option value="3">ปริญญาตรี</option>
+                                        <option value="4">ปริญญาโทขึ้นไป</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">เงินเดือนที่คาดหวัง</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" placeholder="ระบุจำนวนเงิน">
+                                        <span class="input-group-text">บาท</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-3">
+                                    <label class="form-label d-block">ทักษะคอมพิวเตอร์ (เลือกได้มากกว่า 1)</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="skill1">
+                                        <label class="form-check-label" for="skill1">MS Office</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="skill2">
+                                        <label class="form-check-label" for="skill2">Graphic Design</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="skill3">
+                                        <label class="form-check-label" for="skill3">Programming</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-3">
+                                    <label for="interests" class="form-label">สิ่งที่เราสนใจ (Multiple
+                                        Selection)</label>
+                                    <select class="form-select" id="interests" name="interests" multiple size="4">
+                                        <option value="dev">Software Development</option>
+                                        <option value="design">UI/UX Design</option>
+                                        <option value="marketing">Marketing</option>
+                                        <option value="sales">Sales</option>
+                                        <option value="data">Data Analysis</option>
+                                    </select>
+                                    <div class="form-text small text-muted">กด Ctrl (Windows) หรือ Command (Mac)
+                                        ค้างไว้เพื่อเลือกหลายรายการ</div>
+                                </div>
+
+                                <div class="col-12 mt-3">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Bio" id="bio"
+                                            style="height: 100px"></textarea>
+                                        <label for="bio">แนะนำตัวสั้นๆ หรือเป้าหมายในการทำงาน (Bio)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-section-title">4. เอกสารแนบและยืนยัน</div>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label for="resume" class="form-label">อัปโหลด Resume (PDF)</label>
+                                    <input class="form-control" type="file" id="resume" accept=".pdf">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="pic" class="form-label">อัปโหลดรูปถ่าย</label>
+                                    <input class="form-control" type="file" id="pic" accept="image/*">
+                                </div>
+                            </div>
+
+                            <div class="card bg-light border-0 mb-4">
+                                <div class="card-body py-2">
+                                    <div class="form-check form-switch mt-2">
+                                        <input class="form-check-input" type="checkbox" id="consent" required>
+                                        <label class="form-check-label text-danger" for="consent">
+                                            ข้าพเจ้ายืนยันว่าข้อมูลข้างต้นเป็นความจริงทุกประการ *
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-2">
+                                <div class="col-md-8">
+                                    <button type="submit"
+                                        class="btn btn-primary btn-lg w-100 shadow-sm">ส่งข้อมูลการสมัคร</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="reset"
+                                        class="btn btn-outline-secondary btn-lg w-100">ล้างข้อมูล</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

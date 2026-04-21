@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฝึกหัด JavaScript บทที่ 9</title>
+    <style>
+        :root {
+            --primary-bg: #f0f2f5;
+            --container-bg: #ffffff;
+            --text-main: #333333;
+            --primary-btn: #0056b3;
+            --primary-btn-hover: #004494;
+            --border-color: #cccccc;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: var(--container-bg);
+            padding: 30px 40px;
+            border: 1px solid var(--border-color);
+            max-width: 750px;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #000000;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .instructions {
+            margin-bottom: 30px;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #444444;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .instructions ul {
+            margin: 8px 0 0 0;
+            padding-left: 25px;
+        }
+
+        .section-title {
+            font-size: 1.05em;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 1px dotted var(--border-color);
+            padding-bottom: 5px;
+            color: #111111;
+        }
+
+        .button-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 0.95em;
+            color: #ffffff;
+            background-color: var(--primary-btn);
+            border: 1px solid #004085;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: var(--primary-btn-hover);
+        }
+
+        .footer {
+            margin-top: 35px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            text-align: right;
+        }
+
+        .btn-clear {
+            background-color: #f8f9fa;
+            color: #333333;
+            border: 1px solid #adb5bd;
+            width: auto;
+            min-width: 150px;
+            padding: 8px 15px;
+            font-size: 0.9em;
+        }
+
+        .btn-clear:hover {
+            background-color: #e2e6ea;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Assignment-JavaScript-ข้อ 3</h2>
+
+        <div class="instructions">
+            <strong>คำอธิบายการแสดงผล:</strong>
+            <ul>
+                <li><strong>ส่วนที่ 1 (ข้อ 1 - 4):</strong> แสดงผลลัพธ์ผ่านหน้าต่าง Console (กด F12 เพื่อเรียกดู)</li>
+                <li><strong>ส่วนที่ 2 (ข้อ 5 - 7):</strong> แสดงผลลัพธ์ผ่านหน้าต่าง Alert หรือ Prompt บนเบราว์เซอร์</li>
+            </ul>
+        </div>
+
+        <div class="section-title">ส่วนที่ 1: แสดงผลลัพธ์ทาง Console</div>
+        <div class="button-group">
+            <button type="button" onclick="runTask1()">ข้อ 1: ระบบตัดเกรด</button>
+            <button type="button" onclick="runTask2()">ข้อ 2: ปริมาตรทรงกลม</button>
+            <button type="button" onclick="runTask3()">ข้อ 3: จัดการสต็อกสินค้า</button>
+            <button type="button" onclick="runTask4()">ข้อ 4: ค่าปรับคืนหนังสือ</button>
+        </div>
+
+        <div class="section-title">ส่วนที่ 2: แสดงผลลัพธ์ทาง Alert / Prompt</div>
+        <div class="button-group">
+            <button type="button" onclick="entrySystem()">ข้อ 5: ระบบตรวจคนเข้างาน</button>
+            <button type="button" onclick="calculateNetPrice()">ข้อ 6: คำนวณราคาสุทธิ</button>
+            <button type="button" onclick="coffeeOrder()">ข้อ 7: ระบบสั่งกาแฟ</button>
+        </div>
+
+        <div class="footer">
+            <button type="button" class="btn-clear" onclick="console.clear(); alert('ล้างข้อความใน Console เรียบร้อยแล้ว');">
+                ล้างหน้าต่าง Console
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
