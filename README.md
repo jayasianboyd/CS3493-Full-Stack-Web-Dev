@@ -1,4 +1,4 @@
-# CS3493 Full Stack Web Development Portfolio <img src="https://cdn.simpleicons.org/w3c/005A9C" width="32" height="32" align="center" />
+# CS3493 Full Stack Web Development  <img src="https://cdn.simpleicons.org/w3c/005A9C" width="32" height="32" align="center" />
 
 Welcome to the **CS3493 Full Stack Web Development** coursework repository! This collection showcases the assignments, labs, and projects completed by student **661568** throughout the course.
 
